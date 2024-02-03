@@ -13,8 +13,8 @@ In this project, your team will implement the following Knapsack problems in the
 ### 01 Knapsack Problem
 * Brute Force
 * Greedy
-### Dynamic Programming
-* Fractional Knapsack Problem
+* Dynamic Programming
+### Fractional Knapsack Problem
 * Brute Force
 * Greedy
 * Dynamic Programming (Optional - this is difficult)
