@@ -6,21 +6,18 @@ Skills Used: Java programming
 
 Knowledge Goals: Greedy, Dynamic Programming and their applications
 
-
-
-
-Summary
+## Summary
 
 In this project, your team will implement the following Knapsack problems in these formats and compare their execution times.
 
-01 Knapsack Problem
-Brute Force
-Greedy
-Dynamic Programming
-Fractional Knapsack Problem
-Brute Force
-Greedy
-Dynamic Programming (Optional - this is difficult)
+### 01 Knapsack Problem
+* Brute Force
+* Greedy
+### Dynamic Programming
+* Fractional Knapsack Problem
+* Brute Force
+* Greedy
+* Dynamic Programming (Optional - this is difficult)
 
 To better understand the terminology used, we provide the following definitions to our strategies: 
 
@@ -32,10 +29,7 @@ To better understand the terminology used, we provide the following definitions
 
 In addition to the coding, a Word document final report will be created that will detail the design and experimental results.
 
-
-
-
-Part 1: Designing the Experiment
+# Part 1: Designing the Experiment
 
 When you are designing your experiment, you and your team will determine the following:
 
@@ -54,7 +48,7 @@ There are alternate ways to set this up. Some of you may want to have a class fo
 
 
 
-Part 2: Java Implementation
+# Part 2: Java Implementation
 
 Implement the algorithms previously mentioned in Java and perform the experiments with the chosen input lists. Results should be evaluated in terms of the metrics.
 
@@ -83,50 +77,29 @@ Because you will be using charts in this project, some of your output will be in
 Be aware, at some point, the runtime for the Brute Force algorithm may become very long. If you find it will not finish for a threshold of number of items in the knapsack, record this in your report and discuss why. If you cannot produce values for these high knapsack numbers, they will not be expected in your charts. I would suggest waiting at least 5 minutes before considering giving up but it may even take longer.
 
 
-
-
-Part 3: Illustrating and Analyzing Results
+# Part 3: Illustrating and Analyzing Results
 
 In this step, you will provide charts to illustrate the performance of the algorithms. Action items:
 
 Compare the performance of all of the algorithms using plot charts.
 Final Report: Include sections on the design, experimental results (charts) and provide comments in your program that discuss the empirical results with the theoretical results. Do your findings meet theoretical expectations?
 
-
-
-
 Examples for charts, yours may looks very different:
 
-
-
-
-
-
-
-Some other items of importance
+## Some other items of importance
 Use javadoc comments on your functions to explain what they do. You do not have to do this in the class implementations where there is an interface, you can use @inheritDoc.
 Be sure your code is clean, legible and easy to read.
 Feel free to go above and beyond!  Add new methods and functionality, test in different ways in addition to what you are required to do, be creative! The top grades go to those who go above and beyond. Strive for excellence.
 You are not required to create unit tests but are welcome to do so if you wish.
 Including the runtime as a comment on algorithms with loops in them will be seen as going above and beyond as well.
 
-
-
-
-Format Requirements
+## Format Requirements
 Please ensure you follow the structure as listed above. Use IntelliJ to do your work. Use javadoc comments where appropriate.
 Your submissions will be by providing a link to your Team's Github repo where this code is stored.
 For your final report, be as professional as possible. I am not putting direct limitations on its length.
 
-
-
-
-Assessment
-
+## Assessment
 Please see the Rubric attached for assessment.
 
-
-
-
-Deliverables
+## Deliverables
 Github repo link (includes code and report file)
