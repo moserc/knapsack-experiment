@@ -2,7 +2,7 @@ package Knapsack01;
 
 class DynamicTest {
 
-//TEMPLATE FILE
+    //TEMPLATE FILE
 
     /*
     @Test
