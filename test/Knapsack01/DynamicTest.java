@@ -1,8 +1,8 @@
 package Knapsack01;
 
-public class DynamicTest {
+class DynamicTest {
 
-       //TEMPLATE FILE
+//TEMPLATE FILE
 
     /*
     @Test
