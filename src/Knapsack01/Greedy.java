@@ -1,5 +1,5 @@
 package Knapsack01;
 
-public class Greedy() {
+public class Greedy {
 
 }
