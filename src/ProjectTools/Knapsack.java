@@ -82,7 +82,7 @@ public class Knapsack {
 
     /**
      * Sets the weights for the items in the knapsack.
-     * @param weights new set of weights for the items in the knapsack. 
+     * @param weights new set of weights for the items in the knapsack.
      */
    public void setWeights(int[] weights){
        this.weights = weights;
