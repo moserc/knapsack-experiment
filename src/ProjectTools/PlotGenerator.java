@@ -10,8 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Class for generating plot charts.
- * Uses JFreeChart library, included in root folder.
+ * Class for generating plot charts. Uses JFreeChart library.
  * @author Cheryl Moser
  */
 public class PlotGenerator {
