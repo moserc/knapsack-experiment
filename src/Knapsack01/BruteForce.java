@@ -1,13 +1,25 @@
 package Knapsack01;
 
-
 import java.util.HashSet;
 import java.util.Set;
 import com.google.common.collect.Sets;
 
+/**
+ * Class that will hold the workings of the brute force approach for the 01knapsack
+ * (made by Ashtin)
+ */
+
 public class BruteForce {
 
+    /**
+     * Method that will find the highest profit while staying in the capacity range for the 01knapsack.
+     * @param weights an integer array that holds all the weights for the items in the knapsack.
+     * @param values an integer array that holds all the values for the items in the knapsack.
+     * @param capacity the maximum weight you are able to hold.
+     * @return a double representing the time taken to solve this problem using brute force.
+     */
     public static double bruteForceKnapsack01(int[] weights, int[] values, int capacity) {
+        System.out.println("-------Brute Force 01Knapsack for " + weights.length + " items-------");
         double startTime = System.nanoTime();
         Set<Item> items = new HashSet<>();
         int totalWeight = 0;
@@ -33,44 +45,38 @@ public class BruteForce {
             totalWeight = 0;
             totalValue = 0;
         }
-        System.out.println(bestChoice);
-
-
+        for(Item x : bestChoice){
+            totalWeight += x.weight;
+            totalValue += x.value;
+        }
+        System.out.println("Total Weight = " + totalWeight);
+        System.out.println("Total Profit = " + totalValue);
 
         double endTime = System.nanoTime();
         double timeTaken = (endTime -startTime) / 1000;
         return timeTaken;
     }
-
-
 }
 
-
+/**
+ * Inner class used to hold workings of item object
+ */
 class Item {
     int weight;
     int value;
+
+    /**
+     * constructor for the item object.
+     * @param weight weight of the item.
+     * @param value value of the item.
+     */
     public Item(int weight, int value) {
         this.weight = weight;
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return "Item Weight: " + weight + "\n Item Value: " + value;
+    }
 }
-
-
-
-
-
-
-// ----------POSSIBLE SOLUTION----------------- (does not take long though)
-
-//        if(items ==0 || capacity== 0){
-//            return 0;
-//        }
-//        if(weights[items - 1] > capacity){
-//            return bruteForceKnapsack01(weights,values,capacity,items - 1);
-//
-//        }else{
-//            return Math.max(values[items -1] + bruteForceKnapsack01(weights,values,capacity -weights[items -1], items -1),
-//                    bruteForceKnapsack01(weights,values,capacity,items - 1));
-//        }
-
-
