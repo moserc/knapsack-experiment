@@ -1,5 +1,7 @@
 package Knapsack01;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
@@ -49,6 +51,9 @@ public class Greedy {
         int totWeight = 0;
         int totValue = 0;
 
+        //arraylist to hold knapsack contents
+        List<Map.Entry<Integer, Integer>> knapsackContents = new ArrayList<>();
+
         //iterate through the queue until it is empty, or until the weight
         //limit is met
         while (!items.isEmpty() && totWeight < limit){
@@ -65,6 +70,7 @@ public class Greedy {
                 totValue += item.getKey();
                 //update total weight
                 totWeight += itemWeight;
+                knapsackContents.add(item);
             }
         }
 
@@ -74,7 +80,13 @@ public class Greedy {
         double runtime = (t1 - t0)/1000.0;
 
         //report total weight and total value of the knapsack
-        System.out.println("\nK01-greedy:\nTotal Weight = "+totWeight+
+        //Knapsack Number Knapsack Capacity Printout of Values Printout of Weights
+        System.out.println("Knapsack Items: ");
+        for (Map.Entry<Integer, Integer> entry : knapsackContents){
+            System.out.println("Item Value: "+entry.getKey()+"; Item Weight: "+entry.getValue());
+        }
+
+        System.out.println("\nK01-greedy Totals:\nTotal Weight = "+totWeight+
                 "\nTotal Value = "+totValue+"\n");
         System.out.println("Runtime: "+runtime+"ms");
 
