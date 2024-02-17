@@ -1,9 +1,14 @@
 package FractionalKnapsack;
 
+import ProjectTools.CsvReader;
+import ProjectTools.Knapsack;
 import ProjectTools.PlotGenerator;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         //TODO make "knapsack number" an element of the knapsack class?
 
@@ -39,5 +44,15 @@ public class Main {
         System.out.println("Best value for Dynamic Programming: " + Math.max(some array of values returned by greedy method));
         System.out.println("Best value for Greedy Algorithm: " + Math.max(some array of values returned by dp method));
         */
+
+
+        File file1 = new File("inputs.csv");
+        File file2 = new File("inputs2.csv");
+        File file3 = new File("inputs3.csv");
+        CsvReader csvReader = new CsvReader(file1);
+
+        Knapsack knapsack1 = csvReader.getKnapsack();
+        Double greedyFractional = Greedy.knapSack(knapsack1.getValues(), knapsack1.getWeights(), knapsack1.getMaxWeight(), knapsack1.getTotalItems());
+
     }
 }
