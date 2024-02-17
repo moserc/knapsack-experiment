@@ -27,7 +27,12 @@ public class CsvReader {
      * @param csvFile - A comma-delineated file of integers
      * @throws FileNotFoundException - throws exception if file is not found
      */
+    Knapsack knapsack;
+    //Scanner textFile = new Scanner();
+
     public CsvReader(File csvFile) throws FileNotFoundException {
+        //Knapsack knapsack = new Knapsack();
+
         Scanner textFile = new Scanner(csvFile);
         // Reads in line 1 and parses it in usable variables
         String firstRow = textFile.nextLine();
@@ -36,7 +41,10 @@ public class CsvReader {
         int knapsackNumber = Integer.parseInt(splitline1[0]);
         int knapsackCapacity = Integer.parseInt(splitline1[1]);
 
-        getArraysFromCSV(textFile);
+        knapsack.setMaxWeight(knapsackCapacity);
+
+        knapsack = getArraysFromCSV(textFile);
+
 
         textFile.close();
         // Sort the CSV input if needed
@@ -48,8 +56,9 @@ public class CsvReader {
      * reads in the csv file
      * @param textFile - The Scanner object
      */
-    public void getArraysFromCSV(Scanner textFile){
+    public Knapsack getArraysFromCSV(Scanner textFile){
         // Reads in lines 2 and 3 and parses them into usable int arrays
+
         String secondRow = textFile.nextLine();
         String[] splitline2 = secondRow.split(",");
         valueInput = new int[splitline2.length];
@@ -64,6 +73,34 @@ public class CsvReader {
             int weight = Integer.parseInt(splitline3[i]);
             weightInput[i] = weight;
         }
+        knapsack.setValues(valueInput);
+        knapsack.setWeights(weightInput);
+        knapsack.setTotalItems(weightInput.length);
+
+        return knapsack;
     }
 
+    public Knapsack getKnapsack() {
+        return knapsack;
+    }
+
+    public void setKnapsack(Knapsack knapsack) {
+        this.knapsack = knapsack;
+    }
+
+    public int[] getWeightInput() {
+        return weightInput;
+    }
+
+    public void setWeightInput(int[] weightInput) {
+        this.weightInput = weightInput;
+    }
+
+    public int[] getValueInput() {
+        return valueInput;
+    }
+
+    public void setValueInput(int[] valueInput) {
+        this.valueInput = valueInput;
+    }
 }
