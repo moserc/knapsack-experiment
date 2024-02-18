@@ -107,8 +107,8 @@ public class Greedy {
         //output
         System.out.println("Knapsack Best Value: " + totValue +
                 "\nKnapsack Best Weight: " + totWeight +
-                "\nKnapsack contains items with values " + valueOutput +
-                "\nAnd weights of " + weightOutput);
+                "\nKnapsack contains items with values of " + valueOutput +
+                "\n    and weights of " + weightOutput);
 
         //capture end time
         long t1 = System.nanoTime();
