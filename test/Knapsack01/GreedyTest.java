@@ -1,10 +1,9 @@
 package Knapsack01;
 
+import ProjectTools.Knapsack;
 import org.junit.Test;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import static Knapsack01.Greedy.greedy;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -31,6 +30,10 @@ public class GreedyTest {
         int[] values = {10,16,50,8,32};
         int[] weights = {14,4,9,20,2};
         int limit = 30;
+        Knapsack object = new Knapsack();
+        object.setValues(values);
+        object.setWeights(weights);
+        object.setMaxWeight(limit);
 
         //set up to capture the printed output
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -39,7 +42,7 @@ public class GreedyTest {
         System.setOut(printStream);
 
         //call greedy
-        double runtime = greedy(weights, values, limit);
+        double runtime = greedy(object);
 
         //reset System.out
         System.out.flush();
@@ -50,8 +53,8 @@ public class GreedyTest {
 
         //assertions
         assertTrue(runtime > 0);
-        assertTrue(printedOutput.contains("Total Weight = 29")); //expected --> 29
-        assertTrue(printedOutput.contains("Total Value = 108")); //expected --> 108
+        assertTrue(printedOutput.contains("Knapsack Best Value: 108")); //expected --> 108
+        assertTrue(printedOutput.contains("Knapsack Best Weight: 29")); //expected --> 29
 
     }//end small greedy test
 
@@ -70,6 +73,11 @@ public class GreedyTest {
         int[] weights = {14,4,9,20,2,3,5,12,10,13,30,29,28,17,18,6,27,15,11,19,1,7,8,16,21,23,4,22,3,2};
         int limit = 200;
 
+        Knapsack object = new Knapsack();
+        object.setValues(values);
+        object.setWeights(weights);
+        object.setMaxWeight(limit);
+
         //set up to capture the printed output
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
@@ -77,7 +85,7 @@ public class GreedyTest {
         System.setOut(printStream);
 
         //call greedy
-        double runtime = greedy(weights, values, limit);
+        double runtime = greedy(object);
 
         //reset System.out
         System.out.flush();
@@ -88,8 +96,8 @@ public class GreedyTest {
 
         //assertions
         assertTrue(runtime > 0);
-        assertFalse(printedOutput.contains("Total Weight = 198")); //expected optimal--> 198
-        assertFalse(printedOutput.contains("Total Value = 692")); //expected optimal--> 692
+        assertFalse(printedOutput.contains("Knapsack Best Value: 692")); //expected optimal--> 692
+        assertFalse(printedOutput.contains("Knapsack Best Weight: 198")); //expected optimal--> 198
         //optimal values calculated using an online calculator. See source in the
         //class javadoc above
 
