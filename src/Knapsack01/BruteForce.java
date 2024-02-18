@@ -1,5 +1,6 @@
 package Knapsack01;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import com.google.common.collect.Sets;
@@ -18,8 +19,13 @@ public class BruteForce {
      * @param capacity the maximum weight you are able to hold.
      * @return a double representing the time taken to solve this problem using brute force.
      */
-    public static double bruteForceKnapsack01(int[] weights, int[] values, int capacity) {
-        System.out.println("-------Brute Force 01Knapsack for " + weights.length + " items-------");
+    public static double bruteForceKnapsack01(int[] weights, int[] values, int capacity, int knapsackNumber) {
+        System.out.println("------------Brute Force 01Knapsack for " + weights.length + " items------------");
+        System.out.println("Knapsack Number: " + knapsackNumber);
+        System.out.println("Values in this knapsack are: " + Arrays.toString(values));
+        System.out.println("Weights for this knapsack are: " + Arrays.toString(weights));
+        System.out.println("~~~Solution~~~");
+        System.out.println("Max weight: " + capacity);
         double startTime = System.nanoTime();
         Set<Item> items = new HashSet<>();
         int totalWeight = 0;
@@ -51,6 +57,7 @@ public class BruteForce {
         }
         System.out.println("Total Weight = " + totalWeight);
         System.out.println("Total Profit = " + totalValue);
+        System.out.println();
 
         double endTime = System.nanoTime();
         double timeTaken = (endTime -startTime) / 1000;

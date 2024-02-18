@@ -21,20 +21,20 @@ public class CsvReader {
      */
     int[] valueInput;
 
+
+    Knapsack knapsack;
+
     /**
      * A constructor that accepts a csv file as a parameter, and reads the values to two
      * separate int[]
      *
-     * @param csvFile - A comma-delineated file of integers
+     * @param csvFile -  A comma-delineated file of integers
      * @throws FileNotFoundException - throws exception if file is not found
      */
 
-    Knapsack knapsack;
-    //Scanner textFile = new Scanner();
-
-
     public CsvReader(File csvFile) throws FileNotFoundException {
 
+        knapsack = new Knapsack();
             Scanner textFile = new Scanner(csvFile);
             // Reads in line 1 and parses it in usable variables
             String firstRow = textFile.nextLine();
@@ -43,13 +43,10 @@ public class CsvReader {
             int knapsackNumber = Integer.parseInt(splitline1[0]);
             int knapsackCapacity = Integer.parseInt(splitline1[1]);
 
-
+            knapsack.setKnapsackNumber(knapsackNumber);
             knapsack.setMaxWeight(knapsackCapacity);
 
             knapsack = getArraysFromCSV(textFile);
-
-
-            getArraysFromCSV(textFile);
 
 
             textFile.close();
@@ -116,30 +113,4 @@ public class CsvReader {
         }
 
     }
-//    File file1 = new File("inputs.csv");
-//    File file2 = new File("inputs2.csv");
-//    File file3 = new File("inputs3.csv");
-//    File file4 = new File("inputs4.csv");
-//    File file5 = new File("inputs5.csv");
-//    File file6 = new File("inputs6.csv");
-//
-//    CsvReader csvReader1 = new CsvReader(file1);
-//    CsvReader csvReader2 = new CsvReader(file2);
-//    CsvReader csvReader3 = new CsvReader(file3);
-//    CsvReader csvReader4 = new CsvReader(file4);
-//    CsvReader csvReader5 = new CsvReader(file5);
-//    CsvReader csvReader6 = new CsvReader(file6);
-//
-//    Knapsack knapsack5 = csvReader1.getKnapsack();
-//    Knapsack knapsack10 = csvReader1.getKnapsack();
-//    Knapsack knapsack15 = csvReader1.getKnapsack();
-//    Knapsack knapsack20 = csvReader1.getKnapsack();
-//    Knapsack knapsack25 = csvReader1.getKnapsack();
-//    Knapsack knapsack30 = csvReader1.getKnapsack();
-//
-//    Double brute5 = BruteForce.bruteForceKnapsack01(knapsack5.getWeights(), knapsack5.getValues(), knapsack5.getMaxWeight());
-//    Double brute10 = BruteForce.bruteForceKnapsack01(knapsack10.getWeights(), knapsack10.getValues(), knapsack10.getMaxWeight());
-//    Double brute15 = BruteForce.bruteForceKnapsack01(knapsack15.getWeights(), knapsack15.getValues(), knapsack15.getMaxWeight());
-//    Double brute20 = BruteForce.bruteForceKnapsack01(knapsack20.getWeights(), knapsack20.getValues(), knapsack20.getMaxWeight());
-//    Double brute25 = BruteForce.bruteForceKnapsack01(knapsack25.getWeights(), knapsack25.getValues(), knapsack25.getMaxWeight());
-//    Double brute30 = BruteForce.bruteForceKnapsack01(knapsack30.getWeights(), knapsack30.getValues(), knapsack30.getMaxWeight());
+
