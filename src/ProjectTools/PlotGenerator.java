@@ -5,10 +5,9 @@ import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
-
-
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Class for generating plot charts. Uses JFreeChart library.
@@ -35,14 +34,14 @@ public class PlotGenerator {
      * @param fileName User-specified file path for jpg output.
      * @author Cheryl Moser
      */
-    public void lineChart(double[] times, String fileName){
+    public void lineChart(ArrayList<Double> times, String fileName){
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         //iterate through the list of time(ms) values
-        for (int i = 0; i < times.length; i++) {
+        for (int i = 0; i < times.size(); i++) {
             //add data point to chart
-            dataset.addValue(times[i], "Data", arraySize[i]);
+            dataset.addValue(times.get(i), "Data", arraySize[i]);
         }
 
         //create line chart using data points
@@ -51,7 +50,7 @@ public class PlotGenerator {
         chart.getCategoryPlot().getRangeAxis().setAutoRange(true);
         //call to method for generating image files
         toImage(chart, fileName);
-    }
+    }//end lineChart
 
     /**
      * Generates a plot image file (jpg).
@@ -67,5 +66,5 @@ public class PlotGenerator {
         } catch (IOException e){
             e.getMessage();
         }
-    }
-}
+    }//end toImage
+}//end class
