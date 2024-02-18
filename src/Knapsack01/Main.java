@@ -55,7 +55,8 @@ public class Main {
 		times.clear();
 
 		/*
-		 * 		--------------------GREEDY TIMES:--------------------
+		 * 		--------------------K01 GREEDY TIMES:--------------------
+		 *      --------------------Cheryl Moser--------------------
 		 */
 		times.add(Greedy.greedy(knapsack5));
 		times.add(Greedy.greedy(knapsack10));
