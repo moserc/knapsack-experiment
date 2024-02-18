@@ -27,7 +27,9 @@ public class BruteForce {
         System.out.println("~~~Solution~~~");
         System.out.println("Max weight: " + capacity);
         double startTime = System.nanoTime();
-        Set<Item> items = new Set<>();
+        Set<Item> items = new HashSet<>();
+
+
         int totalWeight = 0;
         int totalValue = 0;
         int bestValue = Integer.MIN_VALUE;
@@ -55,12 +57,15 @@ public class BruteForce {
             totalWeight += x.weight;
             totalValue += x.value;
         }
-        System.out.println("Total Weight = " + totalWeight);
-        System.out.println("Total Profit = " + totalValue);
-        System.out.println();
 
         double endTime = System.nanoTime();
-        double timeTaken = (endTime -startTime) / 1000;
+        double timeTaken = (endTime - startTime) / 1000;
+
+        System.out.println("Total Weight:  " + totalWeight);
+        System.out.println("Total Profit:  " + totalValue);
+        System.out.println("Runtime: " +timeTaken);
+        System.out.println();
+
         return timeTaken;
     }
 }
