@@ -1,11 +1,13 @@
 package ProjectTools;
 
+import java.io.FileNotFoundException;
+
 /**
  * Driver class for generating three additional input arrays.
  * @author Cheryl Moser
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         //generate three 2D arrays of sizes 20, 25, 30
         Integer[][] arr20 = new Integer[3][20];
@@ -28,5 +30,7 @@ public class Main {
         CsvOutput.output("src/Inputs/inputs4.csv", arr20);
         CsvOutput.output("src/Inputs/inputs5.csv", arr25);
         CsvOutput.output("src/Inputs/inputs6.csv", arr30);
+
+
     }//end main
 }//end class

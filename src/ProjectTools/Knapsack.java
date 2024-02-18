@@ -23,6 +23,12 @@ public class Knapsack {
        this.weights = weights;
    }
 
+   public Knapsack(){
+       this.maxWeight = 0;
+       this.totalItems = 0;
+       this.values = null;
+       this.weights = null;
+   }
     /**
      * Gets the maxweight of the knapsack.
      * @return the maximum weight.
