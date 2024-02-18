@@ -1,9 +1,8 @@
 package Knapsack01;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
+import ProjectTools.Knapsack;
+
+import java.util.*;
 
 /**
  * Class containing the method for performing a greedy solution to the
@@ -24,41 +23,54 @@ public class Greedy {
      * items into the knapsack sequentially by highest value until the weight
      * limit is met.
      *
-     * @param weights A list of weights for each item in the knapsack.
-     * @param values A list of values for each item in the knapsack.
-     * @param limit The capacity of the knapsack.
-     * @return runtime in microseconds.
+     * @param object The knapsack object.
+     * @return The knapsack object.
      * @author Cheryl Moser
      */
-    public static double greedy(int[] weights, int[] values, int limit) {
+    public static double greedy(Knapsack object) {
 
         //capture start time
         long t0 = System.nanoTime();
 
+        int[] weights = object.getWeights();
+        int[] values = object.getValues();
+        int limit = object.getMaxWeight();
+
+        //output
+        System.out.println("-------Greedy 01Knapsack-------");
+        System.out.println("Knapsack number: " + object.getKnapsackNumber() +
+                "\nNumber of item options: " + object.getTotalItems() +
+                "\nWeight Capacity: " + object.getMaxWeight());
+
         //create a priority queue to hold items, sort in decreasing order by
-        //item benefit (key)
+        //item benefit (key): O(1)
         PriorityQueue<Map.Entry<Integer,Integer>> items = new PriorityQueue<>(
                 //custom comparator via lambda expression
                 (a,b) -> b.getKey() - a.getKey()
         );
 
-        //add values and weights as key:value pair to priority queue
-        for (int i = 0; i < weights.length; i++){//O(n)
+        //add values and weights as key:value pair to priority queue.
+        //worst case O(n): depends on the length of the weights list
+        System.out.println("Item options (value,weight):");
+        for (int i = 0; i < weights.length; i++){
             items.offer(Map.entry(values[i], weights[i]));
+            System.out.println("("+values[i] + ", " + weights[i] + ")");
         }
 
         //initialize the total weight and value counts
         int totWeight = 0;
         int totValue = 0;
 
-        //arraylist to hold knapsack contents
-        List<Map.Entry<Integer, Integer>> knapsackContents = new ArrayList<>();
+        //hash set to hold contents of the optimized knapsack
+        HashSet<Map.Entry<Integer, Integer>> knapsackContents = new HashSet<>();
 
         //iterate through the queue until it is empty, or until the weight
-        //limit is met
+        //limit is met. O(n) if items size and weight limit are huge
         while (!items.isEmpty() && totWeight < limit){
 
-            //dequeue in sorted order (use poll, not remove)
+            //dequeue in sorted order. O(log n): priority queue = binary heap
+            // = halved operations involved in the reordering that occurs after
+            //the dequeue.
             Map.Entry<Integer, Integer> item = items.poll();
 
             int itemWeight = item.getValue();
@@ -74,23 +86,36 @@ public class Greedy {
             }
         }
 
+        //create iterator for knapsack items, plus two string builders to hold
+        //the knapsack items by item and weight for bonus output
+        Iterator<Map.Entry<Integer, Integer>> iterator = knapsackContents.iterator();
+        StringBuilder valueOutput = new StringBuilder();
+        StringBuilder weightOutput = new StringBuilder();
+
+        //iterate through the optimized knapsack and attach item elements to
+        //their associated strings
+        while (iterator.hasNext()){
+            Map.Entry<Integer,Integer> entry = iterator.next();
+            valueOutput.append(entry.getKey());
+            weightOutput.append(entry.getValue());
+            if (iterator.hasNext()){
+                valueOutput.append(", ");
+                weightOutput.append(", ");
+            }
+        }
+
+        //output
+        System.out.println("Knapsack Best Value: " + totValue +
+                "\nKnapsack Best Weight: " + totWeight +
+                "\nKnapsack contains items with values " + valueOutput +
+                "\nAnd weights of " + weightOutput);
+
         //capture end time
         long t1 = System.nanoTime();
         //convert to microseconds
         double runtime = (t1 - t0)/1000.0;
+        System.out.println("Runtime: " + runtime + " ms\n");
 
-        //report total weight and total value of the knapsack
-        //Knapsack Number Knapsack Capacity Printout of Values Printout of Weights
-        System.out.println("Knapsack Items: ");
-        for (Map.Entry<Integer, Integer> entry : knapsackContents){
-            System.out.println("Item Value: "+entry.getKey()+"; Item Weight: "+entry.getValue());
-        }
-
-        System.out.println("\nK01-greedy Totals:\nTotal Weight = "+totWeight+
-                "\nTotal Value = "+totValue+"\n");
-        System.out.println("Runtime: "+runtime+"ms");
-
-        //return runtime
         return runtime;
 
     }//end greedy

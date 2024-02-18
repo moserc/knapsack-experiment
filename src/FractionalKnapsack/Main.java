@@ -6,53 +6,68 @@ import ProjectTools.PlotGenerator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
-        //TODO make "knapsack number" an element of the knapsack class?
+        //Data structure to hold runtimes for graph generation
+        ArrayList<Double> times = new ArrayList<>();
 
-        /*
-		--------------------PLOT GENERATION:--------------------
-		*/
-        //chart instantiation
+        //line chart instantiation
         PlotGenerator fracKBruteForceChart = new PlotGenerator("Fractional Knapsack - Brute Force");
         PlotGenerator fracKGreedyChart = new PlotGenerator("Fractional Knapsack - Greedy");
         PlotGenerator fracKDPChart = new PlotGenerator("Fractional Knapsack - Dynamic Programming");
 
-        //the line below is arbitrary and for testing-only, replace with a
-        //double[] holding actual times for each algorithm
-        double[] times = {10.2, 15.5, 20.1, 25.3, 30.2, 40.8};
+        File file1 = new File("src/Inputs/inputs.csv");
+        File file2 = new File("src/Inputs/inputs2.csv");
+        File file3 = new File("src/Inputs/inputs3.csv");
+        File file4 = new File("src/Inputs/inputs4.csv");
+        File file5 = new File("src/Inputs/inputs5.csv");
+        File file6 = new File("src/Inputs/inputs6.csv");
 
-        //chart construction and jpg output
+        CsvReader csvReader1 = new CsvReader(file1);
+        CsvReader csvReader2 = new CsvReader(file2);
+        CsvReader csvReader3 = new CsvReader(file3);
+        CsvReader csvReader4 = new CsvReader(file4);
+        CsvReader csvReader5 = new CsvReader(file5);
+        CsvReader csvReader6 = new CsvReader(file6);
+
+        Knapsack knapsack5 = csvReader1.getKnapsack();
+        Knapsack knapsack10 = csvReader2.getKnapsack();
+        Knapsack knapsack15 = csvReader3.getKnapsack();
+        Knapsack knapsack20 = csvReader4.getKnapsack();
+        Knapsack knapsack25 = csvReader5.getKnapsack();
+        Knapsack knapsack30 = csvReader6.getKnapsack();
+
+        /*
+         * 		--------------------BRUTE FORCE TIMES:--------------------
+         */
+
+        //TODO Angela method calls here
+
+        //create line chart, clear the array list for the next set of times
         fracKBruteForceChart.lineChart(times, "./images/fracK_bruteForce.jpg");
+        times.clear();
+
+        /*
+         * 		--------------------GREEDY TIMES:--------------------
+         */
+
+        //TODO Angela method calls here
+
+        //create line chart, clear the array list for the next set of times
         fracKGreedyChart.lineChart(times, "./images/fracK_greedy.jpg");
+        times.clear();
+
+        /*
+         * 		--------------------DYNAMIC PROGRAMMING TIMES:--------------------
+         */
+
+        //TODO Mycole's method calls here
+
         fracKDPChart.lineChart(times, "./images/fracK_dp.jpg");
-        /*
-		--------------------END PLOT GENERATION:--------------------
-		*/
-
-        //for all below, I just made a wild guess as to what data structures we'll be using
-        /*
-        //Printout for each knapsack object
-        System.out.println("KnapSack Number: " + item.Number);
-        System.out.println("KnapSack item values: " + item.values);
-        System.out.println("KnapSack item weights: " + item.keys);
-
-        //Printout for overall best values
-        System.out.println("Best value for Brute Force: " + Math.max(some array of values returned by brute force method));
-        System.out.println("Best value for Dynamic Programming: " + Math.max(some array of values returned by greedy method));
-        System.out.println("Best value for Greedy Algorithm: " + Math.max(some array of values returned by dp method));
-        */
-
-
-        File file1 = new File("inputs.csv");
-        File file2 = new File("inputs2.csv");
-        File file3 = new File("inputs3.csv");
-        CsvReader csvReader = new CsvReader(file1);
-
-        Knapsack knapsack1 = csvReader.getKnapsack();
-        Double greedyFractional = Greedy.knapSack(knapsack1.getValues(), knapsack1.getWeights(), knapsack1.getMaxWeight(), knapsack1.getTotalItems());
+        times.clear();
 
     }
 }

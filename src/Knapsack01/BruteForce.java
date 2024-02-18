@@ -27,7 +27,7 @@ public class BruteForce {
         System.out.println("~~~Solution~~~");
         System.out.println("Max weight: " + capacity);
         double startTime = System.nanoTime();
-        Set<Item> items = new HashSet<>();
+        Set<Item> items = new Set<>();
         int totalWeight = 0;
         int totalValue = 0;
         int bestValue = Integer.MIN_VALUE;
@@ -87,3 +87,11 @@ class Item {
         return "Item Weight: " + weight + "\n Item Value: " + value;
     }
 }
+
+
+
+
+
+
+
+
