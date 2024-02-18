@@ -45,12 +45,12 @@ public class Main {
 		System.out.println("Best value for Greedy Algorithm: " + Math.max(some array of values returned by dp method));
 		*/
 
-		File file1 = new File("inputs.csv");
-		File file2 = new File("inputs2.csv");
-		File file3 = new File("inputs3.csv");
-		File file4 = new File("inputs4.csv");
-		File file5 = new File("inputs5.csv");
-		File file6 = new File("inputs6.csv");
+		File file1 = new File("src/Inputs/inputs.csv");
+		File file2 = new File("src/Inputs/inputs2.csv");
+		File file3 = new File("src/Inputs/inputs3.csv");
+		File file4 = new File("src/Inputs/inputs4.csv");
+		File file5 = new File("src/Inputs/inputs5.csv");
+		File file6 = new File("src/Inputs/inputs6.csv");
 
 		CsvReader csvReader1 = new CsvReader(file1);
 		CsvReader csvReader2 = new CsvReader(file2);
@@ -60,18 +60,18 @@ public class Main {
 		CsvReader csvReader6 = new CsvReader(file6);
 
 		Knapsack knapsack5 = csvReader1.getKnapsack();
-		Knapsack knapsack10 = csvReader1.getKnapsack();
-		Knapsack knapsack15 = csvReader1.getKnapsack();
-		Knapsack knapsack20 = csvReader1.getKnapsack();
-		Knapsack knapsack25 = csvReader1.getKnapsack();
-		Knapsack knapsack30 = csvReader1.getKnapsack();
+		Knapsack knapsack10 = csvReader2.getKnapsack();
+		Knapsack knapsack15 = csvReader3.getKnapsack();
+		Knapsack knapsack20 = csvReader4.getKnapsack();
+		Knapsack knapsack25 = csvReader5.getKnapsack();
+		Knapsack knapsack30 = csvReader6.getKnapsack();
 
-		Double brute5 = BruteForce.bruteForceKnapsack01(knapsack5.getWeights(), knapsack5.getValues(), knapsack5.getMaxWeight());
-		Double brute10 = BruteForce.bruteForceKnapsack01(knapsack10.getWeights(), knapsack10.getValues(), knapsack10.getMaxWeight());
-		Double brute15 = BruteForce.bruteForceKnapsack01(knapsack15.getWeights(), knapsack15.getValues(), knapsack15.getMaxWeight());
-		Double brute20 = BruteForce.bruteForceKnapsack01(knapsack20.getWeights(), knapsack20.getValues(), knapsack20.getMaxWeight());
-		Double brute25 = BruteForce.bruteForceKnapsack01(knapsack25.getWeights(), knapsack25.getValues(), knapsack25.getMaxWeight());
-		Double brute30 = BruteForce.bruteForceKnapsack01(knapsack30.getWeights(), knapsack30.getValues(), knapsack30.getMaxWeight());
+		Double brute5 = BruteForce.bruteForceKnapsack01(knapsack5.getWeights(), knapsack5.getValues(), knapsack5.getMaxWeight(), knapsack5.getKnapsackNumber());
+		Double brute10 = BruteForce.bruteForceKnapsack01(knapsack10.getWeights(), knapsack10.getValues(), knapsack10.getMaxWeight(),knapsack10.getKnapsackNumber());
+		Double brute15 = BruteForce.bruteForceKnapsack01(knapsack15.getWeights(), knapsack15.getValues(), knapsack15.getMaxWeight(), knapsack15.getKnapsackNumber());
+		Double brute20 = BruteForce.bruteForceKnapsack01(knapsack20.getWeights(), knapsack20.getValues(), knapsack20.getMaxWeight(), knapsack20.getKnapsackNumber());
+		Double brute25 = BruteForce.bruteForceKnapsack01(knapsack25.getWeights(), knapsack25.getValues(), knapsack25.getMaxWeight(), knapsack25.getKnapsackNumber());
+		Double brute30 = BruteForce.bruteForceKnapsack01(knapsack30.getWeights(), knapsack30.getValues(), knapsack30.getMaxWeight(), knapsack30.getKnapsackNumber());
 
 
 	}

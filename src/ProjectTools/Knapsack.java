@@ -4,6 +4,7 @@ package ProjectTools;
  * Class that will have our knapsack objects.
  */
 public class Knapsack {
+    int knapsackNumber;
     int maxWeight;
     int totalItems;
     int[] values;
@@ -16,7 +17,8 @@ public class Knapsack {
      * @param values values of all the items in the knapsack.
      * @param weights weight of all the items in the knapsack.
      */
-   public Knapsack(int maxWeight, int totalItems, int[] values, int[] weights){
+   public Knapsack(int knapsackNumber,int maxWeight, int totalItems, int[] values, int[] weights){
+       this.knapsackNumber = knapsackNumber;
        this.maxWeight = maxWeight;
        this.totalItems = totalItems;
        this.values = values;
@@ -24,6 +26,7 @@ public class Knapsack {
    }
 
    public Knapsack(){
+       knapsackNumber =0;
        this.maxWeight = 0;
        this.totalItems = 0;
        this.values = null;
@@ -92,5 +95,21 @@ public class Knapsack {
      */
    public void setWeights(int[] weights){
        this.weights = weights;
+   }
+
+    /**
+     * Sets the knapsack number we are using
+     * @param knapsackNumber number of knapsack
+     */
+   public void setKnapsackNumber(int knapsackNumber){
+       this.knapsackNumber = knapsackNumber;
+   }
+
+    /**
+     * Gets the number of the knapsack we are using
+     * @return number of knapsack
+     */
+   public int getKnapsackNumber(){
+       return knapsackNumber;
    }
 }

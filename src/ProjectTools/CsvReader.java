@@ -21,20 +21,20 @@ public class CsvReader {
      */
     int[] valueInput;
 
+
+    Knapsack knapsack;
+
     /**
      * A constructor that accepts a csv file as a parameter, and reads the values to two
      * separate int[]
      *
-     * @param csvFile - A comma-delineated file of integers
+     * @param csvFile -  A comma-delineated file of integers
      * @throws FileNotFoundException - throws exception if file is not found
      */
 
-    Knapsack knapsack;
-    //Scanner textFile = new Scanner();
-
-
     public CsvReader(File csvFile) throws FileNotFoundException {
 
+        knapsack = new Knapsack();
             Scanner textFile = new Scanner(csvFile);
             // Reads in line 1 and parses it in usable variables
             String firstRow = textFile.nextLine();
@@ -43,13 +43,10 @@ public class CsvReader {
             int knapsackNumber = Integer.parseInt(splitline1[0]);
             int knapsackCapacity = Integer.parseInt(splitline1[1]);
 
-
+            knapsack.setKnapsackNumber(knapsackNumber);
             knapsack.setMaxWeight(knapsackCapacity);
 
             knapsack = getArraysFromCSV(textFile);
-
-
-            getArraysFromCSV(textFile);
 
 
             textFile.close();
