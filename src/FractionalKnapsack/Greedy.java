@@ -1,11 +1,23 @@
 package FractionalKnapsack;
+/**
+ * Author: Angela Fujihara
+ */
 
 import java.util.Arrays;
 import java.util.Comparator;
 
 public class Greedy {
 
-
+    /**
+     * Knapsack method that accepts two 1D int[] of values and weights, and decides what to
+     * keep based off the greedy approach
+     * @param values - an int[] containing the values of the items
+     * @param weights - an int[] containing the weights of the items
+     * @param maxWeight - the max weight of the knapsack
+     * @param totalItems - the total number of items coming into the algorithm, used to create
+     *                   an appropriately sized array
+     * @return - a double that contains the time complexity for the algorithm
+     */
     // Method to solve the fractional knapsack problem
     static double knapSack(int[] values, int[] weights, int maxWeight, int totalItems) {
         double startTime = System.nanoTime();
@@ -15,7 +27,9 @@ public class Greedy {
         for (int i = 0; i < totalItems; i++) {
             items[i] = new Item(weights[i], values[i]);
         }
-
+        /**
+         * anonymous subclass that compares the weights and values of each item
+         */
         // Comparator to sort items based on value-to-weight ratio in descending order
         Comparator<Item> comparator = new Comparator<Item>() {
             @Override
@@ -52,11 +66,19 @@ public class Greedy {
 
     }
 
+    /**
+     * Inner class that defines an Item
+     */
     // Inner class representing an item with weight and value
     static class Item {
         int weight;
         int value;
 
+        /**
+         * constructor for Item class
+         * @param weight - read in via a .csv file
+         * @param value - read in via a .csv file
+         */
         public Item(int weight, int value) {
             this.weight = weight;
             this.value = value;
