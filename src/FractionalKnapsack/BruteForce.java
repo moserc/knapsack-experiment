@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 public class BruteForce {
 
+
     /**
      * Class constructor
      */
@@ -23,15 +24,23 @@ public class BruteForce {
      * @param totalItems - The number of items being passed into the knapsack
      * @return - A double that represents the time complexity of the algorithm
      */
-    static double knapSack(int[] values, int[] weights, int maxWeight, int totalItems) {
+    static double knapSack(int[] values, int[] weights, int maxWeight, int totalItems, int knapsackNumber, int capacity) {
+        System.out.println("------------Brute Force 01Knapsack for " + weights.length + " items------------");
+        System.out.println("Knapsack Number: " + knapsackNumber);
+        System.out.println("Values in this knapsack are: " + Arrays.toString(values));
+        System.out.println("Weights in this knapsack are: " + Arrays.toString(weights));
+        System.out.println("~~~Solution~~~");
+        System.out.println("Max weight: " + capacity);
         double startTime = System.nanoTime();
         double maxTotalValue  = 0;
         int[] bestCombination = new int[totalItems];
+        double totalWeight = Double.MIN_VALUE;
+        double totalValue = Double.MIN_VALUE;
 
         // Generate all possible combinations, using bitwise left shift
         for (int i = 0; i < (1 << totalItems); i++) {
-            double totalValue  = 0;
-            double totalWeight = 0;
+            totalValue  = 0;
+            totalWeight = 0;
 
             for (int j = 0; j < totalItems; j++) {
                 if ((i & (1 << j)) > 0) {
@@ -53,8 +62,12 @@ public class BruteForce {
         }
 
         double endTime = System.nanoTime();
-
-        return (endTime - startTime) / 1000;
+        double timeTaken = (endTime - startTime) / 1000;
+        System.out.println("Total Weight:  " + totalWeight);
+        System.out.println("Total Profit:  " + totalValue);
+        System.out.println("Runtime: " + timeTaken);
+        System.out.println();
+        return timeTaken;
     }
 
 
