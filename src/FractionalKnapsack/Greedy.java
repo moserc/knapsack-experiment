@@ -19,7 +19,13 @@ public class Greedy {
      * @return - a double that contains the time complexity for the algorithm
      */
     // Method to solve the fractional knapsack problem
-    static double knapSack(int[] values, int[] weights, int maxWeight, int totalItems) {
+    static double knapSack(int[] values, int[] weights, int maxWeight, int totalItems, int knapsackNumber, int capacity) {
+        System.out.println("------------Brute Force 01Knapsack for " + weights.length + " items------------");
+        System.out.println("Knapsack Number: " + knapsackNumber);
+        System.out.println("Values in this knapsack are: " + Arrays.toString(values));
+        System.out.println("Weights in this knapsack are: " + Arrays.toString(weights));
+        System.out.println("~~~Solution~~~");
+        System.out.println("Max weight: " + capacity);
         double startTime = System.nanoTime();
         // Create an array to hold items with their values and weights
         Item[] items = new Item[totalItems];
@@ -47,6 +53,7 @@ public class Greedy {
         Arrays.sort(items, comparator);
         int usedCapacity = 0;
         double totalValue = 0;
+        int totalWeight = 0;
 
         // Fill the knapsack with items while considering their weights
         for (Item item : items) {
@@ -62,6 +69,10 @@ public class Greedy {
         }
         double endTime = System.nanoTime();
         double timeTaken = (endTime - startTime) / 1000;
+        System.out.println("Total Weight:  " + totalWeight);
+        System.out.println("Total Profit:  " + totalValue);
+        System.out.println("Runtime: " + timeTaken);
+        System.out.println();
         return timeTaken;
 
     }
