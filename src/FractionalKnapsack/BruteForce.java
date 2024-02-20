@@ -25,7 +25,7 @@ public class BruteForce {
      * @return - A double that represents the time complexity of the algorithm
      */
     static double knapSack(int[] values, int[] weights, int maxWeight, int totalItems, int knapsackNumber) {
-        System.out.println("------------Brute Force 01Knapsack for " + weights.length + " items------------");
+        System.out.println("------------Brute Force Fractional Knapsack for " + weights.length + " items------------");
         System.out.println("Knapsack Number: " + knapsackNumber);
         System.out.println("Values in this knapsack are: " + Arrays.toString(values));
         System.out.println("Weights in this knapsack are: " + Arrays.toString(weights));

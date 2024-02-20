@@ -20,7 +20,7 @@ public class Greedy {
      */
     // Method to solve the fractional knapsack problem
     static double knapSack(int[] values, int[] weights, int maxWeight, int totalItems, int knapsackNumber) {
-        System.out.println("------------Brute Force 01Knapsack for " + weights.length + " items------------");
+        System.out.println("------------Greedy Fractional Knapsack for " + weights.length + " items------------");
         System.out.println("Knapsack Number: " + knapsackNumber);
         System.out.println("Values in this knapsack are: " + Arrays.toString(values));
         System.out.println("Weights in this knapsack are: " + Arrays.toString(weights));
@@ -59,10 +59,12 @@ public class Greedy {
         for (Item item : items) {
             if (usedCapacity + item.weight <= maxWeight) {
                 usedCapacity += item.weight;
+                totalWeight+= item.weight;
                 totalValue += item.value;
             } else {
                 double remainingCapacity = maxWeight - usedCapacity;
                 totalValue += item.value * (remainingCapacity / item.weight);
+                totalWeight += item.weight * (remainingCapacity / item.weight);
                 usedCapacity += remainingCapacity;
                 break;
             }

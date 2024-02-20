@@ -73,6 +73,12 @@ public class Main {
 		 */
 
 		//TODO Mycole's method calls here
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack5.getWeights(), knapsack5.getValues(), knapsack5.getTotalItems()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack10.getWeights(), knapsack10.getValues(), knapsack10.getTotalItems()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack15.getWeights(), knapsack15.getValues(), knapsack15.getTotalItems()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack20.getWeights(), knapsack20.getValues(), knapsack20.getTotalItems()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack25.getWeights(), knapsack25.getValues(), knapsack25.getTotalItems()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack30.getWeights(), knapsack30.getValues(), knapsack30.getTotalItems()));
 
 		k01DPChart.lineChart(times, "./images/k01_dp.jpg");
 		times.clear();
