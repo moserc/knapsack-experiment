@@ -1,5 +1,6 @@
 package Knapsack01;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,6 +31,8 @@ public class BruteForce {
         Set<Item> items = new HashSet<>();
 
 
+        ArrayList<Integer> weightsUsed = new ArrayList<>();
+        ArrayList<Integer> valuesUsed = new ArrayList<>();
         int totalWeight = 0;
         int totalValue = 0;
         int bestValue = Integer.MIN_VALUE;
@@ -53,16 +56,22 @@ public class BruteForce {
             totalWeight = 0;
             totalValue = 0;
         }
+
         for(Item x : bestChoice){
             totalWeight += x.weight;
             totalValue += x.value;
+            weightsUsed.add(x.weight);
+            valuesUsed.add(x.value);
         }
+
+
 
         double endTime = System.nanoTime();
         double timeTaken = (endTime - startTime) / 1000;
 
-        System.out.println("Total Weight:  " + totalWeight);
-        System.out.println("Total Profit:  " + totalValue);
+        System.out.println("Total Weight:  " + totalWeight + "     Weights Used: " + weightsUsed);
+
+        System.out.println("Total Profit:  " + totalValue + "     Values Used: " + valuesUsed);
         System.out.println("Runtime: " + timeTaken);
         System.out.println();
 

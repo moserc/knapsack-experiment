@@ -41,7 +41,7 @@ public class Dynamic {
          * @return The maximum value that can be obtained within the weight constraint.
          */
         public static double fractionalKnapsack(int[] values, int[] weights, int capacity, int knapsackNumber) {
-            System.out.println("------------Brute Force 01Knapsack for " + weights.length + " items------------");
+            System.out.println("------------Dynamic Programming Fractional Knapsack for " + weights.length + " items------------");
         System.out.println("Knapsack Number: " + knapsackNumber);
         System.out.println("Values in this knapsack are: " + Arrays.toString(values));
         System.out.println("Weights for this knapsack are: " + Arrays.toString(weights));
