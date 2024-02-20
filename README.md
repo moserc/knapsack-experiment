@@ -465,7 +465,8 @@ JFreeChart.
 <hr>
 
 ## Theoretical results vs empirical results
-<cite>Author: Mycole Brown</cite>
+<cite>Author: Cheryl Moser</cite>
+
 <hr>
 
 ## Which algorithm performed best for which knapsack?
@@ -510,16 +511,25 @@ JFreeChart.
 
 ## Algorithm development
 
-### [algorithm 1 title]
+### Brute force method for the fractional knapsack problem
 <cite>Author: Angela Fujihara</cite>
 <dl>
-<dt></dt>
-<dd></dd>
+    <dd>The methodology involves iterating through all possible combinations of items 
+    and calculating the total value and weight for each combination. It ensures accuracy 
+    by considering every possible combination but may be inefficient for large datasets 
+    due to its exponential time complexity.
+    </dd>
 
-### [algorithm 2 title]
+### Greedy method for the fractional knapsack problem
 <cite>Author: Angela Fujihara</cite>
 <dt></dt>
-<dd></dd>
+    <dd>
+    The methodology involves sorting the items based on their value-to-weight ratio 
+    and iteratively selecting the items with the highest ratio until the knapsack's 
+    capacity is reached. It prioritizes items with the highest immediate benefit, 
+    aiming to maximize the total value of items in the knapsack. However, it may 
+    not always yield the optimal solution.
+    </dd>
 </dl>
 
 ### Greedy method for the knapsack 0-1 problem
