@@ -6,45 +6,45 @@
 <dt>Angela Fujihara, Project Manager</dt>
 <dd>Contributions:
     <ul>
-        <li>Project planning, weekly meeting facilitato
-        <li>FracK brute force algorith
-        <li>FracK greedy algorith
-        <li>Final report outlin
-        <li>Co-authored the CSV reader clas
+        <li>Project planning, weekly meeting facilitator</li>
+        <li>FracK brute force algorithm</li>
+        <li>FracK greedy algorithm</li>
+        <li>Final report outline</li>
+        <li>Co-authored the CSV reader class</li>
     </ul>
 </dd>
 
 <dt>Cheryl Moser, Version Control Manager</dt>
 <dd>Contributions:
     <ul>
-        <li>Repository managemen
-        <li>csv outpu
-        <li>generation of 3 additional csv file
-        <li>K01 greedy algorith
-        <li>JUnit tests for K01 greed
-        <li>Plot generation via JFreeChar
-        <li>Translate final report to markdown fil
+        <li>Repository management</li>
+        <li>csv output</li>
+        <li>generation of 3 additional csv files</li>
+        <li>K01 greedy algorithm</li>
+        <li>JUnit tests for K01 greedy</li>
+        <li>Plot generation via JFreeChart</li>
+        <li>Translate final report to markdown file</li>
     </ul>
 </dd>
 
 <dt>Mycole Brown, Development Manager</dt>
 <dd>Contributions:
     <ul>
-        <li>Co-authored the CSV reader clas
-        <li>K01 dynamic programming algorith
-        <li>FracK dynamic programming algorith
+        <li>Co-authored the CSV reader class</li>
+        <li>K01 dynamic programming algorithm</li>
+        <li>FracK dynamic programming algorithm</li>
     </ul>
 </dd>
 
 <dt>Ashtin Rivada, Design Manager</dt>
 <dd>Contributions:
     <ul>
-        <li>Project design & UML diagra
-        <li>Knapsack object clas
-        <li>K01 brute force algorith
-        <li>JUnit tests for K01 brute forc
-        <li>Co-authored CSV reader clas
-        <li>Design review of deliverable
+        <li>Project design & UML diagram</li>
+        <li>Knapsack object class</li>
+        <li>K01 brute force algorithm</li>
+        <li>JUnit tests for K01 brute force</li>
+        <li>Co-authored CSV reader class</li>
+        <li>Design review of deliverables</li>
     </ul>
 </dd>
 </dl>
@@ -115,12 +115,12 @@ JFreeChart.
     </dd>
     <b>Speed</b>
     <ul>
-        <li>csv file with 5 items - Approximate between 60k-70k microsecond
-        <li>csv file with 10 items - Approximately between 0-10k microsecond
-        <li>csv file with 15 items - Approximately between 20k-30k microsecond
-        <li>csv file with 20 items - Approximately between 170k-180k microsecond
-        <li>csv file with 25 items is off the chart
-        <li>csv file with 30 items is off the chart
+        <li>csv file with 5 items - Approximate between 60k-70k microseconds</li>
+        <li>csv file with 10 items - Approximately between 0-10k microseconds</li>
+        <li>csv file with 15 items - Approximately between 20k-30k microseconds</li>
+        <li>csv file with 20 items - Approximately between 170k-180k microseconds</li>
+        <li>csv file with 25 items is off the chart</li>
+        <li>csv file with 30 items is off the chart</li>
     </ul>
     <dt>Time Complexity:</dt>
     <dd>
@@ -145,12 +145,12 @@ JFreeChart.
     </dd>
     <b>Speed</b>
     <ul>
-        <li>csv file with 5 items - Approximate between 4500-4750k microsecond 
-        <li>csv file with 10 items - Approximately between 250-500 microsecond
-        <li>csv file with 15 items - Approximately between 250-500 microsecond
-        <li>csv file with 20 items - Approximately between 500-750 microsecond
-        <li>csv file with 25 items - Approximately between 500-750 microsecond
-        <li>csv file with 30 items - Approximately between 500-750 microsecond
+        <li>csv file with 5 items - Approximate between 4500-4750k microseconds</li>
+        <li>csv file with 10 items - Approximately between 250-500 microseconds</li>
+        <li>csv file with 15 items - Approximately between 250-500 microseconds</li>
+        <li>csv file with 20 items - Approximately between 500-750 microseconds</li>
+        <li>csv file with 25 items - Approximately between 500-750 microseconds</li>
+        <li>csv file with 30 items - Approximately between 500-750 microseconds</li>
     </ul>
     <dt>Time Complexity:</dt>
     <dd>
@@ -187,12 +187,12 @@ JFreeChart.
     </dd>
     <b>Speed</b>
     <ul>
-        <li>csv file with 5 items - Approximate between 1500-1600 microsecond
-        <li>csv file with 10 items - Approximately between 0-100 microsecond
-        <li>csv file with 15 items - Approximately between 0-100 microsecond
-        <li>csv file with 20 items - Approximately between 0-100 microsecond
-        <li>csv file with 25 items - Approximately between 0-100 microsecond
-        <li>csv file with 30 items - Approximately between 0-100 microsecond
+        <li>csv file with 5 items - Approximate between 1500-1600 microseconds</li>
+        <li>csv file with 10 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 15 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 20 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 25 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 30 items - Approximately between 0-100 microseconds</li>
     </ul>
     <dt>Time Complexity:</dt>
     <dd>
@@ -209,12 +209,12 @@ JFreeChart.
     </dd>
     <b>Speed</b>
     <ul>
-        <li>csv file with 5 items - Approximate between 0-5000 microsecond
-        <li>csv file with 10 items - Approximately between 0-5000 microsecond
-        <li>csv file with 15 items - Approximately between 25k-30k microsecond
-        <li>csv file with 20 items - Approximately between 120k-125k microsecond 
-        <li>csv file with 25 items - off the char  
-        <li>csv file with 30 items - off the char
+        <li>csv file with 5 items - Approximate between 0-5000 microseconds</li>
+        <li>csv file with 10 items - Approximately between 0-5000 microseconds</li>
+        <li>csv file with 15 items - Approximately between 25k-30k microseconds</li>
+        <li>csv file with 20 items - Approximately between 120k-125k microseconds</li>
+        <li>csv file with 25 items - off the chart</li>
+        <li>csv file with 30 items - off the chart</li>
     </ul>
     <dt>Time Complexity:</dt>
     <dd>
@@ -243,12 +243,12 @@ JFreeChart.
     </dd>
     <b>Speed</b>
     <ul>
-        <li>csv file with 5 items - Approximate between 60k-70k microseconds
-        <li>csv file with 10 items - Approximately between 0-10k microseconds
-        <li>csv file with 15 items - Approximately between 20k-30k microseconds
-        <li>csv file with 20 items - Approximately between 170k-180k microseconds
-        <li>csv file with 25 items is off the chart.
-        <li>csv file with 30 items is off the chart.
+        <li>csv file with 5 items - Approximate between 60k-70k microseconds</li>
+        <li>csv file with 10 items - Approximately between 0-10k microseconds</li>
+        <li>csv file with 15 items - Approximately between 20k-30k microseconds</li>
+        <li>csv file with 20 items - Approximately between 170k-180k microseconds</li>
+        <li>csv file with 25 items is off the chart</li>
+        <li>csv file with 30 items is off the chart</li>
     </ul>
     <dt>Time Complexity:</dt>
     <dd>
@@ -264,12 +264,12 @@ JFreeChart.
     </dd>
     <b>Speed</b>
     <ul>
-        <li>csv file with 5 items - Approximate between 1500-1600 microseconds
-        <li>csv file with 10 items - Approximately between 0-100 microseconds
-        <li>csv file with 15 items - Approximately between 0-100 microseconds
-        <li>csv file with 20 items - Approximately between 0-100 microseconds  
-        <li>csv file with 25 items - Approximately between 0-100 microseconds  
-        <li>csv file with 30 items - Approximately between 0-100 
+        <li>csv file with 5 items - Approximate between 1500-1600 microseconds</li>
+        <li>csv file with 10 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 15 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 20 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 25 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 30 items - Approximately between 0-100 microseconds</li>
     </ul>
     <dt>Time Complexity:</dt>
     <dd>
@@ -301,12 +301,12 @@ JFreeChart.
         </dd>
         <b>Speed</b>
         <ul>
-            <li>For 5 items: Around 1500-1600 microseconds.
-            <li>For 10 items: Roughly 0-100 microseconds.
-            <li>For 15 items: Also approximately 0-100 microseconds.
-            <li>For 20 items: Similarly, around 0-100 microseconds.
-            <li>For 25 items: Consistently about 0-100 microseconds.
-            <li>For 30 items: Maintaining around 0-100 microseconds.
+            <li>For 5 items: Around 1500-1600 microseconds</li>
+            <li>For 10 items: Roughly 0-100 microseconds</li>
+            <li>For 15 items: Also approximately 0-100 microseconds</li>
+            <li>For 20 items: Similarly, around 0-100 microseconds</li>
+            <li>For 25 items: Consistently about 0-100 microseconds</li>
+            <li>For 30 items: Maintaining around 0-100 microseconds</li>
         </ul>
         <dt>Time Complexity:</dt>
         <dd>
@@ -322,12 +322,12 @@ JFreeChart.
         </dd>
         <b>Speed</b>
         <ul>
-            <li>For 5 items: Approximately 16,000-17,000 microseconds.
-            <li>For 10 items: Typically between 0-1000 microseconds.
-            <li>For 15 items: Similarly, around 0-1000 microseconds.
-            <li>For 20 items: Also about 0-1000 microseconds.
-            <li>For 25 items: Usually between 1000-2000 microseconds.
-            <li>For 30 items: Consistently between 1000-2000 microseconds.
+            <li>For 5 items: Approximately 16,000-17,000 microseconds</li>
+            <li>For 10 items: Typically between 0-1000 microseconds</li>
+            <li>For 15 items: Similarly, around 0-1000 microseconds</li>
+            <li>For 20 items: Also about 0-1000 microseconds</li>
+            <li>For 25 items: Usually between 1000-2000 microseconds</li>
+            <li>For 30 items: Consistently between 1000-2000 microseconds</li>
         </ul>
         <dt>Time Complexity:</dt>
         <dd>
@@ -361,21 +361,21 @@ JFreeChart.
     <dd>
     <ul>
     ----------01 Greedy Speeds----------
-        <li>Knapsack #1: 9,500 Microseconds
-        <li>Knapsack #2: about 650 Microseconds 
-        <li>Knapsack #3: about 800 Microseconds
-        <li>Knapsack #4: about 1,100 Microseconds
-        <li>Knapsack #5: about 1,250 Microseconds
-        <li>Knapsack #6: about 1,400 Microseconds
+        <li>Knapsack #1: 9,500 Microseconds</li>
+        <li>Knapsack #2: about 650 Microseconds</li>
+        <li>Knapsack #3: about 800 Microseconds</li>
+        <li>Knapsack #4: about 1,100 Microseconds</li>
+        <li>Knapsack #5: about 1,250 Microseconds</li>
+        <li>Knapsack #6: about 1,400 Microseconds</li>
     </ul>
     <ul>
     ----------Fractional Brute Speeds----------
-        <li>Knapsack #1: Less than 5,000,000 Microseconds 
-        <li>Knapsack #2:  Less than 5,000,000 Microseconds
-        <li>Knapsack #3:  Less than 5,000,000 Microseconds
-        <li>Knapsack #4:  Less than 5,000,000 Microseconds
-        <li>Knapsack #5:  about 5,000,000 Microseconds
-        <li>Knapsack #6: about 130,000,000 Microseconds 
+        <li>Knapsack #1: Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #2:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #3:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #4:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #5:  about 5,000,000 Microseconds</li>
+        <li>Knapsack #6: about 130,000,000 Microseconds</li>
     </ul>
     </dd>
     <dt>Comparison</dt>
@@ -395,21 +395,21 @@ JFreeChart.
     <dd><br>
     ----------01 Brute Speeds----------
     <ul>
-        <li>Knapsack #1:  Less than 2,500,000 Microseconds 
-        <li>Knapsack #2:  Less than 2,500,000 Microseconds
-        <li>Knapsack #3:  Less than 2,500,000 Microseconds
-        <li>Knapsack #4:  Less than 2,500,000 Microseconds
-        <li>Knapsack #5: about 2,700,000 Microseconds
-        <li>Knapsack #6: about 54,000,000 Microseconds
+        <li>Knapsack #1:  Less than 2,500,000 Microseconds</li>
+        <li>Knapsack #2:  Less than 2,500,000 Microseconds</li>
+        <li>Knapsack #3:  Less than 2,500,000 Microseconds</li>
+        <li>Knapsack #4:  Less than 2,500,000 Microseconds</li>
+        <li>Knapsack #5: about 2,700,000 Microseconds</li>
+        <li>Knapsack #6: about 54,000,000 Microseconds</li>
     </ul>
         ----------Fractional Brute Speeds----------
     <ul>
-        <li>Knapsack #1: Less than 5,000,000 Microseconds
-        <li>Knapsack #2:  Less than 5,000,000 Microseconds
-        <li>Knapsack #3:  Less than 5,000,000 Microseconds
-        <li>Knapsack #4:  Less than 5,000,000 Microseconds
-        <li>Knapsack #5:  about 5,000,000 Microseconds
-        <li>Knapsack #6: about 130,000,000 Microseconds 
+        <li>Knapsack #1: Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #2:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #3:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #4:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #5:  about 5,000,000 Microseconds</li>
+        <li>Knapsack #6: about 130,000,000 Microseconds</li>
     </ul>
     <dt>Comparison</dt>
     <dd>
@@ -487,13 +487,13 @@ JFreeChart.
                 <li>Dynamic Programming (Fractional Knapsack):<br>
                 This approach excels, particularly for larger tasks. It breaks down the 
                 problem into smaller, manageable parts and efficiently combines their solutions 
-                without sacrificing efficiency.
+                without sacrificing efficiency.</li>
 <br>
                 <li>Greedy (Fractional Knapsack): Greedy remains a viable choice, especially 
                 for smaller datasets. It prioritizes items with the best value-to-weight 
                 ratio, adding them to the knapsack incrementally. While it may not always 
                 yield the optimal solution, its speed and reliability make it a practical 
-                option for smaller-scale problems.
+                option for smaller-scale problems.</li>
             </ul>
         </dd>
     <dt>Conclusion:</dt>
