@@ -47,8 +47,8 @@ public class Main {
 		times.add(BruteForce.bruteForceKnapsack01(knapsack10.getWeights(), knapsack10.getValues(), knapsack10.getMaxWeight(),knapsack10.getKnapsackNumber()));
 		times.add(BruteForce.bruteForceKnapsack01(knapsack15.getWeights(), knapsack15.getValues(), knapsack15.getMaxWeight(), knapsack15.getKnapsackNumber()));
 		times.add(BruteForce.bruteForceKnapsack01(knapsack20.getWeights(), knapsack20.getValues(), knapsack20.getMaxWeight(), knapsack20.getKnapsackNumber()));
-		//times.add(BruteForce.bruteForceKnapsack01(knapsack25.getWeights(), knapsack25.getValues(), knapsack25.getMaxWeight(), knapsack25.getKnapsackNumber()));
-		//times.add(BruteForce.bruteForceKnapsack01(knapsack30.getWeights(), knapsack30.getValues(), knapsack30.getMaxWeight(), knapsack30.getKnapsackNumber()));
+		times.add(BruteForce.bruteForceKnapsack01(knapsack25.getWeights(), knapsack25.getValues(), knapsack25.getMaxWeight(), knapsack25.getKnapsackNumber()));
+		times.add(BruteForce.bruteForceKnapsack01(knapsack30.getWeights(), knapsack30.getValues(), knapsack30.getMaxWeight(), knapsack30.getKnapsackNumber()));
 
 		//create line chart, clear the array list for the next set of times
 		k01BruteForceChart.lineChart(times, "./images/k01_bruteForce.jpg");
