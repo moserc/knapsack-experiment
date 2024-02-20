@@ -47,8 +47,8 @@ public class Main {
 		times.add(BruteForce.bruteForceKnapsack01(knapsack10.getWeights(), knapsack10.getValues(), knapsack10.getMaxWeight(),knapsack10.getKnapsackNumber()));
 		times.add(BruteForce.bruteForceKnapsack01(knapsack15.getWeights(), knapsack15.getValues(), knapsack15.getMaxWeight(), knapsack15.getKnapsackNumber()));
 		times.add(BruteForce.bruteForceKnapsack01(knapsack20.getWeights(), knapsack20.getValues(), knapsack20.getMaxWeight(), knapsack20.getKnapsackNumber()));
-		times.add(BruteForce.bruteForceKnapsack01(knapsack25.getWeights(), knapsack25.getValues(), knapsack25.getMaxWeight(), knapsack25.getKnapsackNumber()));
-		times.add(BruteForce.bruteForceKnapsack01(knapsack30.getWeights(), knapsack30.getValues(), knapsack30.getMaxWeight(), knapsack30.getKnapsackNumber()));
+		//times.add(BruteForce.bruteForceKnapsack01(knapsack25.getWeights(), knapsack25.getValues(), knapsack25.getMaxWeight(), knapsack25.getKnapsackNumber()));
+		//times.add(BruteForce.bruteForceKnapsack01(knapsack30.getWeights(), knapsack30.getValues(), knapsack30.getMaxWeight(), knapsack30.getKnapsackNumber()));
 
 		//create line chart, clear the array list for the next set of times
 		k01BruteForceChart.lineChart(times, "./images/k01_bruteForce.jpg");
@@ -73,6 +73,12 @@ public class Main {
 		 */
 
 		//TODO Mycole's method calls here
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack5.getWeights(), knapsack5.getValues(), knapsack5.getTotalItems(), knapsack5.getKnapsackNumber()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack10.getWeights(), knapsack10.getValues(), knapsack10.getTotalItems(), knapsack10.getKnapsackNumber()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack15.getWeights(), knapsack15.getValues(), knapsack15.getTotalItems(), knapsack15.getKnapsackNumber()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack20.getWeights(), knapsack20.getValues(), knapsack20.getTotalItems(), knapsack20.getKnapsackNumber()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack25.getWeights(), knapsack25.getValues(), knapsack25.getTotalItems(), knapsack25.getKnapsackNumber()));
+		times.add(Dynamic.knapSack(knapsack5.getMaxWeight(), knapsack30.getWeights(), knapsack30.getValues(), knapsack30.getTotalItems(), knapsack30.getKnapsackNumber()));
 
 		k01DPChart.lineChart(times, "./images/k01_dp.jpg");
 		times.clear();
