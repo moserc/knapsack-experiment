@@ -1,5 +1,7 @@
 package Knapsack01;
 
+import java.util.Arrays;
+
 public class Dynamic {
     /**
      * Solves the 0/1 Knapsack problem using dynamic programming.
@@ -11,7 +13,14 @@ public class Dynamic {
      * @return The maximum value that can be achieved within the given weight limit.
      * @author Mycole Brown
      */
-    public static int knapSack(int W, int wt[], int val[], int n) {
+    public static double knapSack(int W, int wt[], int val[], int n, int knapsackNumber) {
+        System.out.println("------------Brute Force 01Knapsack for " + wt.length + " items------------");
+        System.out.println("Knapsack Number: " + knapsackNumber);
+        System.out.println("Values in this knapsack are: " + Arrays.toString(val));
+        System.out.println("Weights for this knapsack are: " + Arrays.toString(wt));
+
+        double startTime = System.nanoTime();
+
         // Table to store the maximum value that can be achieved using the first i items and weight j
         int dp[][] = new int[n + 1][W + 1];
 
@@ -28,11 +37,16 @@ public class Dynamic {
                     dp[i][w] = dp[i - 1][w];
             }
         }
-
         // The last cell of the table contains the answer
-        return dp[n][W];
+        int answer = dp[n][W];
+
+        double endTime = System.nanoTime();
+        double timeTaken = (endTime - startTime) / 1000;
+
+        return timeTaken;
     }
 
 
     }
+
 

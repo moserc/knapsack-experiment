@@ -59,10 +59,12 @@ public class Greedy {
         for (Item item : items) {
             if (usedCapacity + item.weight <= maxWeight) {
                 usedCapacity += item.weight;
+                totalWeight+= item.weight;
                 totalValue += item.value;
             } else {
                 double remainingCapacity = maxWeight - usedCapacity;
                 totalValue += item.value * (remainingCapacity / item.weight);
+                totalWeight += item.weight * (remainingCapacity / item.weight);
                 usedCapacity += remainingCapacity;
                 break;
             }

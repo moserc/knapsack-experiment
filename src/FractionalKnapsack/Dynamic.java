@@ -36,11 +36,22 @@ public class Dynamic {
         /**
          * Finds the maximum achievable value for the fractional knapsack problem.
          *
-         * @param items An array of Item objects representing the potential items for the knapsack.
+         * @param values An array of Item objects representing the potential items for the knapsack.
          * @param capacity The total weight capacity of the knapsack.
          * @return The maximum value that can be obtained within the weight constraint.
          */
-        public static double fractionalKnapsack(Item[] items, int capacity) {
+        public static double fractionalKnapsack(int[] values, int[] weights, int capacity, int knapsackNumber) {
+            System.out.println("------------Dynamic Programming Fractional Knapsack for " + weights.length + " items------------");
+        System.out.println("Knapsack Number: " + knapsackNumber);
+        System.out.println("Values in this knapsack are: " + Arrays.toString(values));
+        System.out.println("Weights for this knapsack are: " + Arrays.toString(weights));
+
+        double startTime = System.nanoTime();
+            Item[] items = new Item[weights.length];
+
+            for(int x =0; x < weights.length; x++){
+                items[x] = new Item(values[x], weights[x]);
+            }
             // Sort items based on value-to-weight ratio in descending order
             Arrays.sort(items, Comparator.comparing((Item item) -> item.value / (double) item.weight).reversed());
 
@@ -60,10 +71,38 @@ public class Dynamic {
                 }
             }
 
-            return dp[numItems][capacity]; // Here we have the optimal value
+            double answer = dp[numItems][capacity];
+
+            double endTime = System.nanoTime();
+            double timeTaken = (endTime - startTime) / 1000;
+
+            System.out.println("~~~Solution~~~");
+        System.out.println("Max weight: " + capacity);
+        System.out.println("Total Weight = ");
+        System.out.println("Total Profit = ");
+        System.out.println();
+
+            return timeTaken; // Here we have the optimal value
         }
 
 
 
 
 }
+//System.out.println(“------------Brute Force 01Knapsack for ” + weights.length + ” items------------“);
+//        System.out.println(“Knapsack Number: ” + knapsackNumber);
+//        System.out.println(“Values in this knapsack are: ” + Arrays.toString(values));
+//        System.out.println(“Weights for this knapsack are: ” + Arrays.toString(weights));
+//        System.out.println(“~~~Solution~~~“);
+//        System.out.println(“Max weight: ” + capacity);
+//        System.out.println(“Total Weight = ” + totalWeight);
+//        System.out.println(“Total Profit = ” + totalValue);
+//        System.out.println();
+
+
+
+
+
+
+
+
