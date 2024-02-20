@@ -1,105 +1,204 @@
-# Comparing Knapsacks Experiment
+# Project 2 Final Report: Comparing Knapsacks Experiment
+<hr>
 
-Purpose: To practice and demonstrate proficiency in creating brute force, greedy and dynamic programming algorithms for the fractional knapsack problem and the 01 Knapsack problem.
+## Design description
+<dl>
+<dt>Angela Fujihara, Project Manager</dt>
+<dd>Contributions:
+    <ul>
+        <li>Project planning, weekly meeting facilitator</li>
+        <li>FracK brute force algorithm</li>
+        <li>FracK greedy algorithm</li>
+        <li>Final report outline</li>
+        <li>Co-authored the CSV reader class</li>
+    </ul>
+</dd>
 
-Skills Used: Java programming
+<dt>Cheryl Moser, Version Control Manager</dt>
+<dd>Contributions:
+    <ul>
+        <li>Repository management</li>
+        <li>csv output</li>
+        <li>generation of 3 additional csv files</li>
+        <li>K01 greedy algorithm</li>
+        <li>JUnit tests for K01 greedy</li>
+        <li>Plot generation via JFreeChart</li>
+        <li>Translate final report to markdown file</li>
+    </ul>
+</dd>
 
-Knowledge Goals: Greedy, Dynamic Programming and their applications
+<dt>Mycole Brown, Development Manager</dt>
+<dd>Contributions:
+    <ul>
+        <li>Co-authored the CSV reader class</li>
+        <li>K01 dynamic programming algorithm</li>
+        <li>FracK dynamic programming algorithm</li>
+    </ul>
+</dd>
 
-## Summary
+<dt>Ashtin Rivada, Design Manager</dt>
+<dd>Contributions:
+    <ul>
+        <li>UML</li>
+        <li>Knapsack object class</li>
+        <li>K01 brute force algorithm</li>
+        <li>JUnit tests for K01 brute force</li>
+        <li>Design review of deliverables</li>
+    </ul>
+</dd>
+</dl>
 
-In this project, your team will implement the following Knapsack problems in these formats and compare their execution times.
+<hr>
 
-### 01 Knapsack Problem
-* Brute Force
-* Greedy
-* Dynamic Programming
-### Fractional Knapsack Problem
-* Brute Force
-* Greedy
-* Dynamic Programming (Optional - this is difficult)
+## Project Description
+<p>Design choices. Include brief description of design choices specific to our project. 
+Discuss reason, thought process behind specific design choices. Discuss reasoning 
+for how code was organized.</p>
 
-To better understand the terminology used, we provide the following definitions to our strategies: 
+<hr>
 
-1: Brute Force: A trial and error method used to and solutions through exhaustive effort. In other words, running through all possible choices to and the most optimal solution. 
+## Plot Charts and Performance Analysis:
+<img src = "images/fracK_bruteForce.jpg" width="600">
+<img src = "images/fracK_greedy.jpg" width="600">
+<img src = "images/fracK_dp.jpg" width="600">
+<img src = "images/k01_bruteForce.jpg" width="600">
+<img src = "images/k01_greedy.jpg" width="600">
+<img src = "images/k01_dp.jpg" width="600">
 
-2: Greedy Solution: We can assemble a globally optimal solution by making a locally optimal solution, called the greedy choice. In other words, choosing the option that looks best in the current position, without consideration to the results from subproblems. 
+<ul>
+    <li>Fractional Dynamic VS 01 Dynamic
+    <li>Fractional Dynamic VS Fractional Greedy
+    <li>Fractional Dynamic VS 01Greedy
+    <li>Fractional Dynamic VS Fractional Brute
+    <li>Fractional Dynamic VS 01 Brute
+    <li>Fractional Greedy VS Fractional Brute
+    <li>Fractional Greedy VS 01 Brute
+    <li>Fractional Greedy VS 01 Greedy
+    <li>Fractional Brute VS 01 Greedy
+    <li>Fractional Brute VS 01 Brute
+    <li>Fractional Brute VS 01 Dynamic
+    <li>01 Dynamic VS 01 Greedy
+    <li>01 Dynamic VS Fractional Greedy
+    <li>01 Dynamic VS 01 Brute
+    <li>01 Greedy VS 01 Brute
+</ul>
 
-3: Dynamic Programming: Like divide-and-conquer, dynamic programming solves problems by combining the solutions to sub-problems. This is especially useful when sub-problems share sub-problems.
+## Theoretical results vs empirical results
+Did our findings meet our theoretical expectations?<br>
+Which algorithm performed best for which knapsack?<br>
+01 Knapsack best algorithm: Why was this the best performing algorithm?<br>
+Fractional Knapsack best algorithm: Why was this the best performing algorithm?<br>
 
-In addition to the coding, a Word document final report will be created that will detail the design and experimental results.
+## Algorithm development
 
-# Part 1: Designing the Experiment
+### [algorithm 1 title]
+<cite>Author: Angela Fujihara</cite>
+<dl>
+<dt>Description</dt>
+<dd></dd>
+<dt>Methods</dt>
+<dd></dd>
+<dt>Analysis</dt>
+<dd></dd>
 
-When you are designing your experiment, you and your team will determine the following:
+### [algorithm 2 title]
+<dt>Description</dt>
+<dd></dd>
+<dt>Methods</dt>
+<dd></dd>
+<dt>Analysis</dt>
+<dd></dd>
+</dl>
 
-Design a UML document for your software's organization.
-Your inputs will be given to you in the form of a CSV file. You will be expected to ingest the CSV file for each iteration you are testing. You will create 3 more additional input files with random values of sizes 20, 25, and 30.
-Decide on reasonable metrics for complexity measurement.
-Execution time in microseconds (nanoseconds / 1000)
-Number of elements
-Decide on how the results will be displayed
-Plan on using a plot chart to display these results. You can do this by either using Java libraries or outputting a file and generating them in Excel. Other forms of data visualization may be approved with permission.
-Add Experiment Design details into Final Report Document. Include the UML document, specifications on metrics chosen as well as the chosen results display. Discuss reasoning for organization of code.
-SUGGESTION for Design: Designing the software, you should either have 7 classes or 2 packages with 4 classes each (preferred). In other words, the latter would be a package called FractionalKnapsack with BruteForce, Dynamic, Greedy, and Main (the executable) in it. The other package would be Knapsack01 with BruteForce, Dynamic, Greedy, and Main in it.
-If you don't want to use packages, then have 7 classes: FracK-Brute, FracK-Dynamic, FracK-Greedy, K01-Brute, K01-Dynamic, K01-Greedy, and Main (executable).
-There are alternate ways to set this up. Some of you may want to have a class for Item, that is okay. Please discuss with your team about the best design and implement it. Whatever you decide on please make it so I can understand where the relevant code is when grading. Use appropriate names and organization.
+### Greedy method for the knapsack 0-1 problem
+<cite>Author: Cheryl Moser</cite>
+<dl>
+<dt>Description</dt>
+    <dd>
+    This method is a modified version of the greedy method for the fractional knapsack. 
+    It is not guaranteed to return optimal results, especially with larger input arrays. 
+    The Junit tests associated with this method confirm that with an input array of size 30, 
+    it does not report the optimal solution; however, with an array of size 5, it did. 
+    In designing the tests, an online calculator (https://augustineaykara.github.io/Knapsack-Calculator/) 
+    was used to find the actual optimized profit and weight for the test input. The 
+    greedy method for this problem is not optimal because it does not consider 
+    combinations of items; instead, it puts items into the knapsack sequentially by 
+    highest value until the weight limit is met.
+    </dd>
 
+<dt>Methods</dt>
+    <dd>
+    A priority queue was used in combination with a custom comparator for holding 
+    value-weight pairs in decreasing order by value. A hash set was used to store 
+    the items that were added to the knapsack. The method iterates through the priority 
+    queue, removing the highest value entry first and adding it to the knapsack until 
+    the queue is empty, or until the weight limit is met.
+    </dd>
 
+<dt>Analysis</dt>
+<dd>
+    The time complexity of this method is O(n log n). This is due to the dequeue 
+    operation nested within the priority queue iterator operation. The iterator operation 
+    depends on the length of the priority queue, or the weight limit, either of which 
+    can be of any size; the dequeue operation involves a re-ordering of the queue, 
+    which is O(log n) due to the halving operations done on the binary heap.
+</dd>
+</dl>
 
+### [algorithm title]
+<cite>Author: Ashtin Rivada</cite>
+<dl>
+<dt>Description</dt>
+<dd></dd>
+<dt>Methods</dt>
+<dd></dd>
+<dt>Analysis</dt>
+<dd></dd>
+</dl>
 
-# Part 2: Java Implementation
+### [algorithm 1 title]
+<cite>Author: Mycole Brown</cite>
+<dl>
+<dt>Description</dt>
+<dd></dd>
+<dt>Methods</dt>
+<dd></dd>
+<dt>Analysis</dt>
+<dd></dd>
 
-Implement the algorithms previously mentioned in Java and perform the experiments with the chosen input lists. Results should be evaluated in terms of the metrics.
+### [algorithm 2 title]
+<dt>Description</dt>
+<dd></dd>
+<dt>Methods</dt>
+<dd></dd>
+<dt>Analysis</dt>
+<dd></dd>
+</dl>
 
-The implementation of this is largely up to you. Here are a few things I look for in well-designed implementations:
+Were there any other algorithms that could have solved these problems? Such as divide-and-conquer?
 
-Follows principles of OOP: Inheritance, Polymorphism, Abstraction, Encapsulation
-I'm not checking for each one of these. Obviously, there are situations where none or very few will be used and there are situations where all may be used. Use your discretion.
-Well-organized project structure.
-This could include multiple packages or possibly not. 
-Use of Interfaces.
-For any classes where it will be relevant, use of interfaces is a great idea. Not required for this project, but optional.
-Easy-to-understand output for testing.
-Output for this project will contain two parts: 
-Part 1: Evidence of successful execution by printing output from main into Terminal. This should show the following:
-Knapsack Number
-Knapsack Capacity
-Printout of Values
-Printout of Weights
-Best value for Brute Force
-Best value for Dynamic Programming (where applicable)
-Best value for Greedy Algorithm
-Part 2: Output printed to files that will be used to create charts OR separate Chart visualizations by using Java libraries.
-If you output the files to CSV, you can do it in a way so that you can open the CSV files, convert them XLSX files and create your charts directly from what you printed. If you want to print out your values and manipulate their locations to create charts that's fine too.
-Use of junit tests is optional but encouraged as well.
-Because you will be using charts in this project, some of your output will be in charts. You will either need to do your research around how to create charts in Java or output to CSV files and create charts separately.
-Be aware, at some point, the runtime for the Brute Force algorithm may become very long. If you find it will not finish for a threshold of number of items in the knapsack, record this in your report and discuss why. If you cannot produce values for these high knapsack numbers, they will not be expected in your charts. I would suggest waiting at least 5 minutes before considering giving up but it may even take longer.
+<hr>
 
+## Purpose: 
+To practice and demonstrate proficiency in creating brute force, greedy 
+and dynamic programming algorithms for the fractional knapsack problem and the 01 
+Knapsack problem.
 
-# Part 3: Illustrating and Analyzing Results
+<hr>
 
-In this step, you will provide charts to illustrate the performance of the algorithms. Action items:
+## Skills Used: Java programming
+Knowledge Goals: Greedy, Dynamic Programming and their applications.
+See <a href = "./PROJECTSPEC.md">PROJECTSPEC.md</a> for more info regarding
+this project's specifications.
 
-Compare the performance of all of the algorithms using plot charts.
-Final Report: Include sections on the design, experimental results (charts) and provide comments in your program that discuss the empirical results with the theoretical results. Do your findings meet theoretical expectations?
+<hr>
 
-Examples for charts, yours may looks very different:
+## How to run this application
+This application uses external libraries that must be added to the project's 
+dependency list. Download the JFreeChart library 
+<a href = "https://www.jfree.org/jfreechart/download/">here</a>, and download the 
+guava-31.0.1-jre.jar file <a href = "https://repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/">here</a>. 
+Add the jar files to the project structure.
 
-## Some other items of importance
-Use javadoc comments on your functions to explain what they do. You do not have to do this in the class implementations where there is an interface, you can use @inheritDoc.
-Be sure your code is clean, legible and easy to read.
-Feel free to go above and beyond!  Add new methods and functionality, test in different ways in addition to what you are required to do, be creative! The top grades go to those who go above and beyond. Strive for excellence.
-You are not required to create unit tests but are welcome to do so if you wish.
-Including the runtime as a comment on algorithms with loops in them will be seen as going above and beyond as well.
-
-## Format Requirements
-Please ensure you follow the structure as listed above. Use IntelliJ to do your work. Use javadoc comments where appropriate.
-Your submissions will be by providing a link to your Team's Github repo where this code is stored.
-For your final report, be as professional as possible. I am not putting direct limitations on its length.
-
-## Assessment
-Please see the Rubric attached for assessment.
-
-## Deliverables
-Github repo link (includes code and report file)
+There are two knapsack packages, each with its own Main.java file. Run both of 
+those to see their respective console output.
