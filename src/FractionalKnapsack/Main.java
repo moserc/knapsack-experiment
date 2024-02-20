@@ -44,7 +44,14 @@ public class Main {
          * 		--------------------BRUTE FORCE TIMES:--------------------
          */
 
-        //TODO Angela method calls here
+
+        times.add(FractionalKnapsack.BruteForce.knapSack(knapsack5.getValues(), knapsack5.getWeights(), knapsack5.getMaxWeight(), knapsack5.getTotalItems(), knapsack5.getKnapsackNumber()));
+        times.add(FractionalKnapsack.BruteForce.knapSack(knapsack10.getValues(), knapsack10.getWeights(), knapsack10.getMaxWeight(), knapsack10.getTotalItems(), knapsack10.getKnapsackNumber()));
+        times.add(FractionalKnapsack.BruteForce.knapSack(knapsack15.getValues(), knapsack15.getWeights(), knapsack15.getMaxWeight(), knapsack15.getTotalItems(), knapsack15.getKnapsackNumber()));
+        times.add(FractionalKnapsack.BruteForce.knapSack(knapsack20.getValues(), knapsack20.getWeights(), knapsack20.getMaxWeight(), knapsack20.getTotalItems(), knapsack20.getKnapsackNumber()));
+        times.add(FractionalKnapsack.BruteForce.knapSack(knapsack25.getValues(), knapsack25.getWeights(), knapsack25.getMaxWeight(), knapsack25.getTotalItems(), knapsack25.getKnapsackNumber()));
+        times.add(FractionalKnapsack.BruteForce.knapSack(knapsack5.getValues(), knapsack30.getWeights(), knapsack30.getMaxWeight(), knapsack30.getTotalItems(), knapsack30.getKnapsackNumber()));
+
 
         //create line chart, clear the array list for the next set of times
         fracKBruteForceChart.lineChart(times, "./images/fracK_bruteForce.jpg");
@@ -55,6 +62,13 @@ public class Main {
          */
 
         //TODO Angela method calls here
+
+        times.add(FractionalKnapsack.Greedy.knapSack(knapsack5.getValues(), knapsack5.getWeights(), knapsack5.getMaxWeight(), knapsack5.getTotalItems(), knapsack5.getKnapsackNumber()));
+        times.add(FractionalKnapsack.Greedy.knapSack(knapsack10.getValues(), knapsack10.getWeights(), knapsack10.getMaxWeight(), knapsack10.getTotalItems(), knapsack10.getKnapsackNumber()));
+        times.add(FractionalKnapsack.Greedy.knapSack(knapsack15.getValues(), knapsack15.getWeights(), knapsack15.getMaxWeight(), knapsack15.getTotalItems(), knapsack15.getKnapsackNumber()));
+        times.add(FractionalKnapsack.Greedy.knapSack(knapsack20.getValues(), knapsack20.getWeights(), knapsack20.getMaxWeight(), knapsack20.getTotalItems(), knapsack20.getKnapsackNumber()));
+        times.add(FractionalKnapsack.Greedy.knapSack(knapsack25.getValues(), knapsack25.getWeights(), knapsack25.getMaxWeight(), knapsack25.getTotalItems(), knapsack25.getKnapsackNumber()));
+        times.add(FractionalKnapsack.Greedy.knapSack(knapsack5.getValues(), knapsack30.getWeights(), knapsack30.getMaxWeight(), knapsack30.getTotalItems(), knapsack30.getKnapsackNumber()));
 
         //create line chart, clear the array list for the next set of times
         fracKGreedyChart.lineChart(times, "./images/fracK_greedy.jpg");
