@@ -76,7 +76,7 @@ JFreeChart.
 
 #### UML Diagram
 
-<img src="">
+<img src = "images/KnapsackExperimentUML.jpeg">
 
 <hr>
 
