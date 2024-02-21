@@ -89,20 +89,3 @@ public class Dynamic {
 
 
 }
-//System.out.println(“------------Brute Force 01Knapsack for ” + weights.length + ” items------------“);
-//        System.out.println(“Knapsack Number: ” + knapsackNumber);
-//        System.out.println(“Values in this knapsack are: ” + Arrays.toString(values));
-//        System.out.println(“Weights for this knapsack are: ” + Arrays.toString(weights));
-//        System.out.println(“~~~Solution~~~“);
-//        System.out.println(“Max weight: ” + capacity);
-//        System.out.println(“Total Weight = ” + totalWeight);
-//        System.out.println(“Total Profit = ” + totalValue);
-//        System.out.println();
-
-
-
-
-
-
-
-
