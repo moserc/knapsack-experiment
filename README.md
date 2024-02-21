@@ -470,7 +470,8 @@ making it preferable in many cases.
     Discarding the first plot point, greedy performed better across the board in this 
     comparison, holding steady around 300ms for all array sizes except size = 25. 
     This point spiked slightly to just above 500ms in the test iteration that I analyzed. 
-    The greedy plot appears to be a curve resembling an O(log n) curve; the brute force 
+    The greedy plot appears to be a curve resembling an O(n log n) curve, though that is
+    somewhat inconclusive without more data points to the right; the brute force 
     plot shows an exponential curve.
     </dd>
 </dl>
