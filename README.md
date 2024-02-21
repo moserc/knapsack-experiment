@@ -74,6 +74,10 @@ profit onto the console while it is running. Then we have our class PlotGenerato
 that will display the runtimes as a graph, to do this we used a Java library called
 JFreeChart.
 
+#### UML Diagram
+
+<img src="">
+
 <hr>
 
 ## Plot Charts
