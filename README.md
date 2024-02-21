@@ -460,7 +460,7 @@ making it preferable in many cases.
 <dt>01 Greedy VS 01 Brute, <cite>Author: Cheryl Moser</cite></dt>
     <br>
     <dd>
-    It seems that all the algorithm plots begin with an outlier point. I suspect 
+    It seems that several algorithm plots begin with an outlier point. I suspect 
     this is due to a slowdown caused by the initialization that happens as the code 
     enters a new algorithm class. I confirmed that the array size of 5 is not the issue 
     by placing the array of size 30 into the first plot point generation, and the array 
