@@ -1,105 +1,664 @@
-# Comparing Knapsacks Experiment
+# Project 2 Final Report: Comparing Knapsacks Experiment
+<hr>
 
-Purpose: To practice and demonstrate proficiency in creating brute force, greedy and dynamic programming algorithms for the fractional knapsack problem and the 01 Knapsack problem.
+## Authors and Contributions
+<dl>
+<dt>Angela Fujihara, Project Manager</dt>
+<dd>Contributions:
+    <ul>
+        <li>Project planning, weekly meeting facilitator</li>
+        <li>FracK brute force algorithm</li>
+        <li>FracK greedy algorithm</li>
+        <li>Final report outline</li>
+        <li>Co-authored the CSV reader class</li>
+    </ul>
+</dd>
 
-Skills Used: Java programming
+<dt>Cheryl Moser, Version Control Manager</dt>
+<dd>Contributions:
+    <ul>
+        <li>Repository management</li>
+        <li>csv output</li>
+        <li>generation of 3 additional csv files</li>
+        <li>K01 greedy algorithm</li>
+        <li>JUnit tests for K01 greedy</li>
+        <li>Plot generation via JFreeChart</li>
+        <li>Translate final report to markdown file</li>
+    </ul>
+</dd>
 
-Knowledge Goals: Greedy, Dynamic Programming and their applications
+<dt>Mycole Brown, Development Manager</dt>
+<dd>Contributions:
+    <ul>
+        <li>Co-authored the CSV reader class</li>
+        <li>K01 dynamic programming algorithm</li>
+        <li>FracK dynamic programming algorithm</li>
+    </ul>
+</dd>
 
-## Summary
+<dt>Ashtin Rivada, Design Manager</dt>
+<dd>Contributions:
+    <ul>
+        <li>Project design & UML diagram</li>
+        <li>Knapsack object class</li>
+        <li>K01 brute force algorithm</li>
+        <li>JUnit tests for K01 brute force</li>
+        <li>Co-authored CSV reader class</li>
+        <li>Design review of deliverables</li>
+    </ul>
+</dd>
+</dl>
 
-In this project, your team will implement the following Knapsack problems in these formats and compare their execution times.
+<hr>
 
-### 01 Knapsack Problem
-* Brute Force
-* Greedy
-* Dynamic Programming
-### Fractional Knapsack Problem
-* Brute Force
-* Greedy
-* Dynamic Programming (Optional - this is difficult)
+## Project Description
+<cite>Author: Ashtin Rivada</cite>
 
-To better understand the terminology used, we provide the following definitions to our strategies: 
+For the structure we chose to use the template you provided for us in the project
+as each one of us would have our own classes that the others shouldn’t be making
+any edits on, so this would help us avoid merge conflicts where we could. We also
+came to an agreement that having the knapsack saved as an object would be the best
+approach, as we could input our data and manipulate it to fit each of our methods
+parameters. We added a ProjectTools package that holds any other classes, that
+aren't the knapsack classes themselves, to use in our project. As for graphing,
+unlike the last project, we decided to try and make the graphs in java ourselves
+so we wouldn't need to use anything other than intelliJ to complete the project.
 
-1: Brute Force: A trial and error method used to and solutions through exhaustive effort. In other words, running through all possible choices to and the most optimal solution. 
+As for the metric we chose to use runtime again. We made this choice because it
+was an easy implementation since we used it for our last project, and also because
+the runtime of the algorithm is easy to understand, explain, and can directly show
+how efficient each algorithm is.  As for how our results will be displayed we have
+each of our methods printing out what weights and values were used, what knapsack
+number it is, the weight capacity, the total weight that we used, and the maximum
+profit onto the console while it is running. Then we have our class PlotGenerator
+that will display the runtimes as a graph, to do this we used a Java library called
+JFreeChart.
 
-2: Greedy Solution: We can assemble a globally optimal solution by making a locally optimal solution, called the greedy choice. In other words, choosing the option that looks best in the current position, without consideration to the results from subproblems. 
+#### UML Diagram
 
-3: Dynamic Programming: Like divide-and-conquer, dynamic programming solves problems by combining the solutions to sub-problems. This is especially useful when sub-problems share sub-problems.
+<img src = "images/KnapsackExperimentUML.jpeg">
 
-In addition to the coding, a Word document final report will be created that will detail the design and experimental results.
+<hr>
 
-# Part 1: Designing the Experiment
+## Plot Charts
+<cite>Author: Cheryl Moser</cite>
 
-When you are designing your experiment, you and your team will determine the following:
+<img src = "images/fracK_bruteForce.jpg" width="600">
+<img src = "images/fracK_greedy.jpg" width="600">
+<img src = "images/fracK_dp.jpg" width="600">
+<img src = "images/k01_bruteForce.jpg" width="600">
+<img src = "images/k01_greedy.jpg" width="600">
+<img src = "images/k01_dp.jpg" width="600">
+<hr>
 
-Design a UML document for your software's organization.
-Your inputs will be given to you in the form of a CSV file. You will be expected to ingest the CSV file for each iteration you are testing. You will create 3 more additional input files with random values of sizes 20, 25, and 30.
-Decide on reasonable metrics for complexity measurement.
-Execution time in microseconds (nanoseconds / 1000)
-Number of elements
-Decide on how the results will be displayed
-Plan on using a plot chart to display these results. You can do this by either using Java libraries or outputting a file and generating them in Excel. Other forms of data visualization may be approved with permission.
-Add Experiment Design details into Final Report Document. Include the UML document, specifications on metrics chosen as well as the chosen results display. Discuss reasoning for organization of code.
-SUGGESTION for Design: Designing the software, you should either have 7 classes or 2 packages with 4 classes each (preferred). In other words, the latter would be a package called FractionalKnapsack with BruteForce, Dynamic, Greedy, and Main (the executable) in it. The other package would be Knapsack01 with BruteForce, Dynamic, Greedy, and Main in it.
-If you don't want to use packages, then have 7 classes: FracK-Brute, FracK-Dynamic, FracK-Greedy, K01-Brute, K01-Dynamic, K01-Greedy, and Main (executable).
-There are alternate ways to set this up. Some of you may want to have a class for Item, that is okay. Please discuss with your team about the best design and implement it. Whatever you decide on please make it so I can understand where the relevant code is when grading. Use appropriate names and organization.
+## Performance Analysis
+
+<dl>
+    <dt>Fractional Dynamic VS 01 Dynamic, <cite>Author: Mycole Brown</cite></dt>
+</dl>
+<hr>
+<dl>
+    <dt>Fractional Dynamic VS Fractional Greedy, <cite>Author: Mycole Brown</cite></dt>
+</dl>
+<hr>
+<dl>
+    <dt>Fractional Dynamic VS 01Greedy, <cite>Author: Mycole Brown</cite></dt>
+</dl>
+<hr>
+<dl>
+    <dt>Fractional Dynamic VS Fractional Brute, <cite>Author: Mycole Brown</cite></dt>
+</dl>
+<hr>
+<dl>
+    <dt>Fractional Dynamic VS 01 Brute, <cite>Author: Angela Fujihara</cite></dt>
+
+--------Brute Force 0/1 Knapsack--------
+<dt>How it Works:</dt>
+<dd>This method checks every possible combination of items, making
+it very slow, especially with larger datasets.
+</dd>
+<b>Speed</b>
+<ul>
+<li>csv file with 5 items - Approximate between 60k-70k microseconds</li>
+<li>csv file with 10 items - Approximately between 0-10k microseconds</li>
+<li>csv file with 15 items - Approximately between 20k-30k microseconds</li>
+<li>csv file with 20 items - Approximately between 170k-180k microseconds</li>
+<li>csv file with 25 items is off the chart</li>
+<li>csv file with 30 items is off the chart</li>
+</ul>
+<dt>Time Complexity:</dt>
+<dd>
+The time complexity of Brute Force 0/1 Knapsack is exponential,
+typically represented as O(2<sup>n</sup>), where 'n' is the number of items.
+This means that as 'n' increases, the time taken to find the optimal solution
+grows exponentially.
+</dd>
+<dt>Execution Time:</dt>
+<dd>
+With small sets of items (like 5 or 10), it's relatively fast,
+taking anywhere from no time at all to about 10 milliseconds. But as the number
+of items increases, it can get really slow. For sets of 15 to 20 items, it takes
+between about 20,000 to 180,000 microseconds. And for sets of 25 or 30 items,
+it gets so slow that we can't even measure it accurately.
+</dd>
+--------Fractional Dynamic Knapsack:--------
+<dt>How it Works:</dt>
+<dd>
+This method sorts items by value-to-weight ratios before picking them,
+which makes it faster than brute force.
+</dd>
+<b>Speed</b>
+<ul>
+<li>csv file with 5 items - Approximate between 4500-4750k microseconds</li>
+<li>csv file with 10 items - Approximately between 250-500 microseconds</li>
+<li>csv file with 15 items - Approximately between 250-500 microseconds</li>
+<li>csv file with 20 items - Approximately between 500-750 microseconds</li>
+<li>csv file with 25 items - Approximately between 500-750 microseconds</li>
+<li>csv file with 30 items - Approximately between 500-750 microseconds</li>
+</ul>
+<dt>Time Complexity:</dt>
+<dd>
+The time complexity of Fractional Dynamic Knapsack is O(n log n),
+where 'n' is the number of items. This complexity arises from sorting the items
+by their value-to-weight ratios before selecting them, which enhances efficiency
+compared to the brute force approach.
+</dd>
+<dt>Execution Time:</dt>
+<dd>
+Unlike brute force, Fractional Dynamic Knapsack stays consistently
+fast no matter how many items you have. For sets of 5 to 30 items, it takes
+about 250 to 500 microseconds most of the time. This shows that it handles
+larger sets of items without slowing down much.
+</dd>
+<dt>Conclusion:</dt>
+<dd>
+Comparing the two methods using the provided data and considering their time
+complexities, Fractional Dynamic Knapsack remains the preferred choice. While
+Brute Force 0/1 Knapsack struggles with larger datasets due to its exponential
+time complexity, Fractional Dynamic Knapsack maintains a more consistent and
+efficient performance, demonstrating its superiority in handling larger sets
+of items.
+</dd>
+</dl>
+<hr>
+<dl>
+    <dt>Fractional Greedy VS Fractional Brute, <cite>Author: Angela Fujihara</cite></dt>
+    <br>
+    ----------Greedy Fractional Knapsack--------
+    <dt>How it Works:</dt>
+    <dd>Greedy Fractional Knapsack selects items based on their value-to-weight 
+    ratio, choosing the most valuable items first until the knapsack is full.
+    </dd>
+    <b>Speed</b>
+    <ul>
+        <li>csv file with 5 items - Approximate between 1500-1600 microseconds</li>
+        <li>csv file with 10 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 15 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 20 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 25 items - Approximately between 0-100 microseconds</li>
+        <li>csv file with 30 items - Approximately between 0-100 microseconds</li>
+    </ul>
+    <dt>Time Complexity:</dt>
+    <dd>
+    Greedy Fractional Knapsack has a time complexity of O(n log n), meaning it's 
+    pretty efficient even for large datasets. This complexity arises from sorting the 
+    items by their value-to-weight ratios before selecting them.
+    </dd>
+
+----------Brute Force Fractional Knapsack--------
+<dt>How it Works:</dt>
+<dd>
+Brute Force Fractional Knapsack considers all possible combinations
+of items to find the best solution, which can take a long time.
+</dd>
+<b>Speed</b>
+<ul>
+<li>csv file with 5 items - Approximate between 0-5000 microseconds</li>
+<li>csv file with 10 items - Approximately between 0-5000 microseconds</li>
+<li>csv file with 15 items - Approximately between 25k-30k microseconds</li>
+<li>csv file with 20 items - Approximately between 120k-125k microseconds</li>
+<li>csv file with 25 items - off the chart</li>
+<li>csv file with 30 items - off the chart</li>
+</ul>
+<dt>Time Complexity:</dt>
+<dd>
+The time complexity of Brute Force Fractional Knapsack is exponential, typically
+represented as O(2<sup>n</sup>), where 'n' is the number of items. This means
+that as 'n' increases, the time taken to find the optimal solution grows exponentially.
+</dd>
+<dt>Conclusion:</dt>
+<dd>
+The Greedy Fractional Knapsack algorithm works better overall. It's fast and
+consistent across different dataset sizes, whereas the Brute Force approach
+slows down a lot as the dataset gets bigger. Additionally, Greedy Fractional
+Knapsack's time complexity suggests it's efficient even for larger datasets,
+making it a preferable choice in most cases.
+</dd>
+</dl>
+<hr>
+<dl>
+    <dt>Fractional Greedy VS 01 Brute, <cite>Author: Angela Fujihara</cite></dt>
+
+----------Brute Force 0/1 Knapsack--------
+<dt>How it Works:</dt>
+<dd>
+Brute Force 0/1 Knapsack checks every possible combination
+of items, which can take a lot of time, especially with more items.
+</dd>
+<b>Speed</b>
+<ul>
+<li>csv file with 5 items - Approximate between 60k-70k microseconds</li>
+<li>csv file with 10 items - Approximately between 0-10k microseconds</li>
+<li>csv file with 15 items - Approximately between 20k-30k microseconds</li>
+<li>csv file with 20 items - Approximately between 170k-180k microseconds</li>
+<li>csv file with 25 items is off the chart</li>
+<li>csv file with 30 items is off the chart</li>
+</ul>
+<dt>Time Complexity:</dt>
+<dd>
+The time complexity of Brute Force 0/1 Knapsack is exponential,
+typically represented as O(2<sup>n</sup>), where 'n' is the number of items. This means
+that as 'n' increases, the time taken to find the optimal solution grows exponentially.
+</dd>
+----------Greedy Fractional Knapsack:--------
+<dt>How it Works:</dt>
+<dd>
+Greedy Fractional Knapsack picks items with the best value-
+to-weight ratio first until the knapsack is full.
+</dd>
+<b>Speed</b>
+<ul>
+<li>csv file with 5 items - Approximate between 1500-1600 microseconds</li>
+<li>csv file with 10 items - Approximately between 0-100 microseconds</li>
+<li>csv file with 15 items - Approximately between 0-100 microseconds</li>
+<li>csv file with 20 items - Approximately between 0-100 microseconds</li>
+<li>csv file with 25 items - Approximately between 0-100 microseconds</li>
+<li>csv file with 30 items - Approximately between 0-100 microseconds</li>
+</ul>
+<dt>Time Complexity:</dt>
+<dd>
+Greedy Fractional Knapsack has a time complexity of O(n log n),
+making it efficient even for larger datasets. This complexity arises from sorting
+the items by their value-to-weight ratios before selecting them.
+</dd>
+<dt>Conclusion:</dt>
+<dd>
+Based on the data and considering how long they take, Greedy
+Fractional Knapsack is faster. It stays speedy across different dataset sizes,
+while Brute Force 0/1 Knapsack slows down a lot as the dataset gets bigger.
+Greedy Fractional Knapsack seems like a better choice when you need a quick
+and decent solution. But keep in mind, the Greedy approach isn't always perfect.
+Sometimes it might not give the best answer, especially if the problem is more
+complicated. So, while Greedy Fractional Knapsack is fast and handy, it might
+not always give you the absolute best solution.
+</dd>
+</dl>
+<hr>
+<dl>
+    <dt>Fractional Greedy VS 01 Greedy, <cite>Author: Angela Fujihara</cite></dt>
+
+----------Greedy Fractional Knapsack--------
+<dt>How it Works:</dt>
+<dd>
+Greedy Fractional Knapsack selects items based on their
+value-to-weight ratio, prioritizing those with the best ratio until the knapsack is full.
+</dd>
+<b>Speed</b>
+<ul>
+<li>For 5 items: Around 1500-1600 microseconds</li>
+<li>For 10 items: Roughly 0-100 microseconds</li>
+<li>For 15 items: Also approximately 0-100 microseconds</li>
+<li>For 20 items: Similarly, around 0-100 microseconds</li>
+<li>For 25 items: Consistently about 0-100 microseconds</li>
+<li>For 30 items: Maintaining around 0-100 microseconds</li>
+</ul>
+<dt>Time Complexity:</dt>
+<dd>
+Greedy Fractional Knapsack has a time complexity of O(n log n),
+ensuring efficiency even with larger datasets. It sorts items by their value-to-weight
+ratios before selection.
+</dd>
+----------Greedy 0/1 Knapsack--------
+<dt>How it Works:</dt>
+<dd>
+Greedy 0/1 Knapsack prioritizes the most valuable items first,
+assessing whether each fits entirely into the knapsack.
+</dd>
+<b>Speed</b>
+<ul>
+<li>For 5 items: Approximately 16,000-17,000 microseconds</li>
+<li>For 10 items: Typically between 0-1000 microseconds</li>
+<li>For 15 items: Similarly, around 0-1000 microseconds</li>
+<li>For 20 items: Also about 0-1000 microseconds</li>
+<li>For 25 items: Usually between 1000-2000 microseconds</li>
+<li>For 30 items: Consistently between 1000-2000 microseconds</li>
+</ul>
+<dt>Time Complexity:</dt>
+<dd>
+Greedy 0/1 Knapsack's time complexity depends on implementation
+but generally handles larger datasets reasonably well. While it doesn't sort
+items like the Fractional Knapsack, it maintains efficiency without significant slowdowns.
+</dd>
+<dt>Conclusion:</dt>
+<dd>
+Considering the execution times and time complexities, both Greedy Fractional
+Knapsack and Greedy 0/1 Knapsack perform well, particularly with smaller datasets.
+Greedy Fractional Knapsack exhibits consistent speed across all dataset sizes,
+while Greedy 0/1 Knapsack slightly increases in time with larger datasets.
+Overall, Greedy Fractional Knapsack appears to handle larger datasets more efficiently,
+making it preferable in many cases.
+</dd>
+</dl>
+<hr>
+<dl>
+    <dt>Comparison Note for Brute Force</dt>
+    <dd>
+    The runtimes for both brute force methods up to knapsack #4 are A LOT less 
+    than 5,000,000 Microseconds, but due to the exponentially high runtime of knapsack 
+    #6 it is hard to say what the number actually is)
+    </dd>
+<hr>
+    <dt>01 dynamic vs 01 greedy, <cite>Author: Ashtin Rivada</cite></dt>
+    <dd>
+    K01 Dynamic Programming method is inconclusive.
+    </dd>
+<hr>
+    <dt>Fractional Brute vs 01 Greedy, <cite>Author: Ashtin Rivada</cite></dt>
+    <dd>
+    <ul>
+    ----------01 Greedy Speeds----------
+        <li>Knapsack #1: 9,500 Microseconds</li>
+        <li>Knapsack #2: about 650 Microseconds</li>
+        <li>Knapsack #3: about 800 Microseconds</li>
+        <li>Knapsack #4: about 1,100 Microseconds</li>
+        <li>Knapsack #5: about 1,250 Microseconds</li>
+        <li>Knapsack #6: about 1,400 Microseconds</li>
+    </ul>
+    <ul>
+    ----------Fractional Brute Speeds----------
+        <li>Knapsack #1: Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #2:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #3:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #4:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #5:  about 5,000,000 Microseconds</li>
+        <li>Knapsack #6: about 130,000,000 Microseconds</li>
+    </ul>
+    </dd>
+    <dt>Comparison</dt>
+    <dd>
+    We can see there is a clear winner in which method ran faster. That would be 
+    the Greedy for the 01 Knapsack. It is very fast and does not change the runtime 
+    much, even for the bigger datasets that Brute force takes forever to finish. 
+    I am assuming the first knapsack for 01 Greedy took much longer than the rest 
+    probably due to all the initializations going through for the first call but 
+    those would not have to be made for the following tests as they were made in 
+    the first and would just need to be updated.
+    </dd>
+</dl>
+<hr>
+<dl>
+    <dt>Fractional Brute vs 01 Brute, <cite>Author: Ashtin Rivada</cite></dt>
+    <dd><br>
+    ----------01 Brute Speeds----------
+    <ul>
+        <li>Knapsack #1:  Less than 2,500,000 Microseconds</li>
+        <li>Knapsack #2:  Less than 2,500,000 Microseconds</li>
+        <li>Knapsack #3:  Less than 2,500,000 Microseconds</li>
+        <li>Knapsack #4:  Less than 2,500,000 Microseconds</li>
+        <li>Knapsack #5: about 2,700,000 Microseconds</li>
+        <li>Knapsack #6: about 54,000,000 Microseconds</li>
+    </ul>
+        ----------Fractional Brute Speeds----------
+    <ul>
+        <li>Knapsack #1: Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #2:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #3:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #4:  Less than 5,000,000 Microseconds</li>
+        <li>Knapsack #5:  about 5,000,000 Microseconds</li>
+        <li>Knapsack #6: about 130,000,000 Microseconds</li>
+    </ul>
+    <dt>Comparison</dt>
+    <dd>
+    Both the Brute force method for the 01 Knapsack and for the Fractional Knapsack 
+    look similar. Each method can solve up to size 20 pretty fast, remaining very 
+    close to the x-axis. Then when we start on Knapsack #5 which has 25 items we 
+    start to see a slight increase for both methods for their runtime. With the 
+    01 knapsack reaching about 2,700,000 microseconds and the fractional reaching 
+    about 5,000,000. Finally we get to knapsack #6 which has 30 items so the number 
+    of combinations increases exponentially. We have the 01 knapsack running at 
+    about 54,000,000 and fractional running at about 130,000,000. We can see here 
+    that once the brute force reaches a certain point it takes a very long time 
+    to finish. The 01 brute force ran about 2x as fast as the fractional probably 
+    due to not having to ratio any items to make sure all of the maximum weight 
+    was taken up.  With this being said The brute force approach would not be ideal 
+    for larger dataSets as the runtime would increase exponentially.
+    </dd>
+</dl>
+<hr>
+<dl>
+    <dt>Fractional Brute vs 01 Dynamic, <cite>Author: Ashtin Rivada</cite></dt>
+    <dd>
+    K01 Dynamic Programming method is inconclusive.
+    </dd>
+</dl>
+<hr>
+<dl>
+    <dt>01 Dynamic VS Fractional Greedy, <cite>Author: Cheryl Moser</cite></dt>
+    <dd>
+    K01 Dynamic Programming method is inconclusive.
+    </dd>
+</dl>
+<hr>
+<dl>
+    <dt>01 Dynamic VS 01 Brute, <cite>Author: Cheryl Moser</cite></dt>
+    <dd>
+    K01 Dynamic Programming method is inconclusive.
+    </dd>
+</dl>
+<hr>
+<dl>
+<dt>01 Greedy VS 01 Brute, <cite>Author: Cheryl Moser</cite></dt>
+    <br>
+    <dd>
+    It seems that several algorithm plots begin with an outlier point. I suspect 
+    this is due to a slowdown caused by the initialization that happens as the code 
+    enters a new algorithm class. I confirmed that the array size of 5 is not the issue 
+    by placing the array of size 30 into the first plot point generation, and the array 
+    of size 5 into the last. The graph still showed that first outlier point. I
+    conducted this test for the K01 Greedy algorithm only.
+    <br>
+    Discarding the first plot point, greedy performed better across the board in this 
+    comparison, holding steady around 300ms for all array sizes except size = 25. 
+    This point spiked slightly to just above 500ms in the test iteration that I analyzed. 
+    The greedy plot appears to be a curve resembling an O(n log n) curve, though that is
+    somewhat inconclusive without more data points to the right; the brute force 
+    plot shows an exponential curve.
+    </dd>
+</dl>
+<hr>
+
+## Theoretical results vs empirical results
+<cite>Author: Cheryl Moser</cite>
+<dl>
+    <dt>Theoretical</dt>
+    <dd>
+    <ul>
+        <li>Brute Force --> Expectation: O(2<sup>n</sup>) for both K01 & FracK</li>
+        <li>Greedy --> O(n log n) for both K01 & FracK; however, we know that 
+        it will produce suboptimal results when applied to K01</li>
+        <li>Dynamic Programming --> 01 O(nW), where W = the weight limit of the knapsack
+            | FracK exponential similar to O(2<sup>n</sup>)</li>
+    </ul></dd>
+    <dt>Empirical</dt>
+    <dd>
+    <ul>
+        <li>Brute Force --> Results match expectations for both knapsacks</li>
+        <li>Greedy --> Results match expectations for both knapsacks</li>
+        <li>Dynamic Programming --> 01 (inconclusive) | 
+            FracK low exponential</li>
+    </ul></dd>
+    <dt>Conclusion</dt>
+    <dd>
+    Results were as expected for brute force and greedy: brute force displayed a curve
+    that was extremely steep as it progressed toward larger arrays; greedy displayed
+    a slow, steady rise as arrays became larger, with a faster performance when applied 
+    to the fractional knapsack. More data points of large array sizes are needed to 
+    determine if the shape of the curve indeed looks like the expected O(n log n).
+    The surprise result lies with the dynamic programming method as applied to the 
+    fractional knapsack, as it did indeed display as exponential, but far less 
+    than the expected O(2<sup>n</sup>).
+    </dd>
+</dl>
+<hr>
+
+## Which algorithm performed best for which knapsack?
+<dl><cite>Author: Angela Fujihara</cite>
+    <dt>0/1 Knapsack:</dt>
+        <dd>    
+        Why Greedy is Best: The Greedy approach is effective for the 0/1 Knapsack 
+        problem because it prioritizes immediate gains. It quickly selects items with the 
+        highest value-to-weight ratio, filling the knapsack until capacity is reached. 
+        Although it may not always find the optimal solution, it generally provides a good 
+        approximation efficiently. In contrast, the brute-force method exhaustively evaluates 
+        all combinations, becoming prohibitively slow as the dataset size increases.
+        </dd>
+    <dt>For Fractional Knapsack:</dt>
+        <dd>    
+            Why Dynamic Programming and Greedy are Best:
+            <ul>
+                <li>Dynamic Programming (Fractional Knapsack):<br>
+                This approach excels, particularly for larger tasks. It breaks down the 
+                problem into smaller, manageable parts and efficiently combines their solutions 
+                without sacrificing efficiency.</li>
+<br>
+                <li>Greedy (Fractional Knapsack): Greedy remains a viable choice, especially 
+                for smaller datasets. It prioritizes items with the best value-to-weight 
+                ratio, adding them to the knapsack incrementally. While it may not always 
+                yield the optimal solution, its speed and reliability make it a practical 
+                option for smaller-scale problems.</li>
+            </ul>
+        </dd>
+    <dt>Conclusion:</dt>
+        <dd>
+        In conclusion, Dynamic Programming and Greedy algorithms stand out as the top 
+        contenders for Fractional Knapsack problems. Dynamic Programming's systematic 
+        approach to problem-solving and efficient solution recombination make it ideal 
+        for larger datasets. On the other hand, Greedy offers speed and reliability, 
+        making it a suitable choice for smaller-scale tasks. For 0/1 Knapsack problems, 
+        Greedy strikes a balance between efficiency and accuracy, making it the preferred 
+        method over the brute-force approach.
+        </dd>
+</dl>
+<hr>
+
+## Algorithm development
+
+### Brute force method for the fractional knapsack problem
+<cite>Author: Angela Fujihara</cite>
+<dl>
+    <dd>The methodology involves iterating through all possible combinations of items 
+    and calculating the total value and weight for each combination. It ensures accuracy 
+    by considering every possible combination but may be inefficient for large datasets 
+    due to its exponential time complexity.
+    </dd>
+
+### Greedy method for the fractional knapsack problem
+<cite>Author: Angela Fujihara</cite>
+<dt></dt>
+    <dd>
+    The methodology involves sorting the items based on their value-to-weight ratio 
+    and iteratively selecting the items with the highest ratio until the knapsack's 
+    capacity is reached. It prioritizes items with the highest immediate benefit, 
+    aiming to maximize the total value of items in the knapsack. However, it may 
+    not always yield the optimal solution.
+    </dd>
+</dl>
+
+### Greedy method for the knapsack 0-1 problem
+<cite>Author: Cheryl Moser</cite>
+<dl>
+<dt>Description</dt>
+    <dd>
+    This method is a modified version of the greedy method for the fractional knapsack. 
+    It is not guaranteed to return optimal results, especially with larger input arrays. 
+    The Junit tests associated with this method confirm that with an input array of size 30, 
+    it does not report the optimal solution; however, with an array of size 5, it did. 
+    In designing the tests, an online calculator (https://augustineaykara.github.io/Knapsack-Calculator/) 
+    was used to find the actual optimized profit and weight for the test input. The 
+    greedy method for this problem is not optimal because it does not consider 
+    combinations of items; instead, it puts items into the knapsack sequentially by 
+    highest value until the weight limit is met.
+    </dd>
+
+<dt>Methods</dt>
+    <dd>
+    A priority queue was used in combination with a custom comparator for holding 
+    value-weight pairs in decreasing order by value. A hash set was used to store 
+    the items that were added to the knapsack. The method iterates through the priority 
+    queue, removing the highest value entry first and adding it to the knapsack until 
+    the queue is empty, or until the weight limit is met.
+    </dd>
+
+<dt>Analysis</dt>
+<dd>
+    The time complexity of this method is O(n log n). This is due to the dequeue 
+    operation nested within the priority queue iterator operation. The iterator operation 
+    depends on the length of the priority queue, or the weight limit, either of which 
+    can be of any size; the dequeue operation involves a re-ordering of the queue, 
+    which is O(log n) due to the halving operations done on the binary heap.
+</dd>
+</dl>
+
+### 01 Brute Force
+<cite>Author: Ashtin Rivada</cite>
+<dl>
+<dt></dt>
+<dd>
+    My process for developing my algorithm came after a bunch of research. My first 
+    approach was using recursion to get all possibilities of combinations but this 
+    seemed to have optimized my method, as I ran it and it solved all the tests 
+    too fast to be considered a true brute force method. This made me take some 
+    time and try to come up with a way to get all combinations without using any 
+    recursion. I concluded that making each weight and value pair an item of itself 
+    would make it easier for comparison and combinations.Then after some time 
+    researching I found a Java library that could get these combinations for me 
+    without optimizing my brute force. To make this work I needed a Set of Items 
+    rather than the array of Items I was originally using so I converted this to 
+    the set and was able to use a method from a java library called “Sets.powerSet”. 
+    This gave me all the possible combinations and from the inputted set of items, 
+    then I looked through each combination making sure the total weight the combination 
+    had was under the maximum weight allowed and if this was true I checked if the 
+    total profit was greater than what I currently had and if it was, it was now 
+    our new total profit. After they are all checked the one with the greatest 
+    profit while also staying within the allowed weight range was saved as my best 
+    choice and I was able to use that to print my answers into the console.
+</dd>
+</dl>
+
+### [algorithm 1 title]
+<cite>Author: Mycole Brown</cite>
+<dl>
+<dt></dt>
+<dd></dd>
 
 
+### [algorithm 2 title]
+<cite>Author: Mycole Brown</cite>
+<dt></dt>
+<dd></dd>
+</dl>
+<hr>
 
+## Were there any other algorithms that could have solved these problems? Such as divide-and-conquer?
+<cite>Author: Mycole Brown</cite>
+<hr>
 
-# Part 2: Java Implementation
+## How to run this application
+This application uses external libraries that must be added to the project's
+dependency list. Download the JFreeChart library
+<a href = "https://www.jfree.org/jfreechart/download/">here</a>, and download the
+guava-31.0.1-jre.jar file <a href = "https://repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/">here</a>.
+Add the jar files to the project structure.
 
-Implement the algorithms previously mentioned in Java and perform the experiments with the chosen input lists. Results should be evaluated in terms of the metrics.
-
-The implementation of this is largely up to you. Here are a few things I look for in well-designed implementations:
-
-Follows principles of OOP: Inheritance, Polymorphism, Abstraction, Encapsulation
-I'm not checking for each one of these. Obviously, there are situations where none or very few will be used and there are situations where all may be used. Use your discretion.
-Well-organized project structure.
-This could include multiple packages or possibly not. 
-Use of Interfaces.
-For any classes where it will be relevant, use of interfaces is a great idea. Not required for this project, but optional.
-Easy-to-understand output for testing.
-Output for this project will contain two parts: 
-Part 1: Evidence of successful execution by printing output from main into Terminal. This should show the following:
-Knapsack Number
-Knapsack Capacity
-Printout of Values
-Printout of Weights
-Best value for Brute Force
-Best value for Dynamic Programming (where applicable)
-Best value for Greedy Algorithm
-Part 2: Output printed to files that will be used to create charts OR separate Chart visualizations by using Java libraries.
-If you output the files to CSV, you can do it in a way so that you can open the CSV files, convert them XLSX files and create your charts directly from what you printed. If you want to print out your values and manipulate their locations to create charts that's fine too.
-Use of junit tests is optional but encouraged as well.
-Because you will be using charts in this project, some of your output will be in charts. You will either need to do your research around how to create charts in Java or output to CSV files and create charts separately.
-Be aware, at some point, the runtime for the Brute Force algorithm may become very long. If you find it will not finish for a threshold of number of items in the knapsack, record this in your report and discuss why. If you cannot produce values for these high knapsack numbers, they will not be expected in your charts. I would suggest waiting at least 5 minutes before considering giving up but it may even take longer.
-
-
-# Part 3: Illustrating and Analyzing Results
-
-In this step, you will provide charts to illustrate the performance of the algorithms. Action items:
-
-Compare the performance of all of the algorithms using plot charts.
-Final Report: Include sections on the design, experimental results (charts) and provide comments in your program that discuss the empirical results with the theoretical results. Do your findings meet theoretical expectations?
-
-Examples for charts, yours may looks very different:
-
-## Some other items of importance
-Use javadoc comments on your functions to explain what they do. You do not have to do this in the class implementations where there is an interface, you can use @inheritDoc.
-Be sure your code is clean, legible and easy to read.
-Feel free to go above and beyond!  Add new methods and functionality, test in different ways in addition to what you are required to do, be creative! The top grades go to those who go above and beyond. Strive for excellence.
-You are not required to create unit tests but are welcome to do so if you wish.
-Including the runtime as a comment on algorithms with loops in them will be seen as going above and beyond as well.
-
-## Format Requirements
-Please ensure you follow the structure as listed above. Use IntelliJ to do your work. Use javadoc comments where appropriate.
-Your submissions will be by providing a link to your Team's Github repo where this code is stored.
-For your final report, be as professional as possible. I am not putting direct limitations on its length.
-
-## Assessment
-Please see the Rubric attached for assessment.
-
-## Deliverables
-Github repo link (includes code and report file)
+There are two knapsack packages, each with its own Main.java file. Run both of
+those to see their respective console output.

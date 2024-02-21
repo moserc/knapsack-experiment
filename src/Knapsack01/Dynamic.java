@@ -24,6 +24,7 @@ public class Dynamic {
         // Table to store the maximum value that can be achieved using the first i items and weight j
         int dp[][] = new int[n + 1][W + 1];
 
+
         // Build the table dp[][] in bottom up manner
         for (int i = 0; i <= n; i++) {
             for (int w = 0; w <= W; w++) {
