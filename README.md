@@ -355,7 +355,9 @@ making it preferable in many cases.
     </dd>
 <hr>
     <dt>01 dynamic vs 01 greedy, <cite>Author: Ashtin Rivada</cite></dt>
--
+    <dd>
+    K01 Dynamic Programming method is inconclusive.
+    </dd>
 <hr>
     <dt>Fractional Brute vs 01 Greedy, <cite>Author: Ashtin Rivada</cite></dt>
     <dd>
@@ -431,17 +433,23 @@ making it preferable in many cases.
 <hr>
 <dl>
     <dt>Fractional Brute vs 01 Dynamic, <cite>Author: Ashtin Rivada</cite></dt>
-    -
+    <dd>
+    K01 Dynamic Programming method is inconclusive.
+    </dd>
 </dl>
 <hr>
 <dl>
     <dt>01 Dynamic VS Fractional Greedy, <cite>Author: Cheryl Moser</cite></dt>
-    -
+    <dd>
+    K01 Dynamic Programming method is inconclusive.
+    </dd>
 </dl>
 <hr>
 <dl>
     <dt>01 Dynamic VS 01 Brute, <cite>Author: Cheryl Moser</cite></dt>
-    -
+    <dd>
+    K01 Dynamic Programming method is inconclusive.
+    </dd>
 </dl>
 <hr>
 <dl>
@@ -466,7 +474,36 @@ making it preferable in many cases.
 
 ## Theoretical results vs empirical results
 <cite>Author: Cheryl Moser</cite>
-
+<dl>
+    <dt>Theoretical</dt>
+    <dd>
+    <ul>
+        <li>Brute Force --> Expectation: O(2<sup>n</sup>) for both K01 & FracK</li>
+        <li>Greedy --> O(n log n) for both K01 & FracK; however, we know that 
+        it will produce suboptimal results when applied to K01</li>
+        <li>Dynamic Programming --> 01 O(nW), where W = the weight limit of the knapsack
+            | FracK exponential similar to O(2<sup>n</sup>)</li>
+    </ul></dd>
+    <dt>Empirical</dt>
+    <dd>
+    <ul>
+        <li>Brute Force --> Results match expectations for both knapsacks</li>
+        <li>Greedy --> Results match expectations for both knapsacks</li>
+        <li>Dynamic Programming --> 01 (inconclusive) | 
+            FracK low exponential</li>
+    </ul></dd>
+    <dt>Conclusion</dt>
+    <dd>
+    Results were as expected for brute force and greedy: brute force displayed a curve
+    that was extremely steep as it progressed toward larger arrays; greedy displayed
+    a slow, steady rise as arrays became larger, with a faster performance when applied 
+    to the fractional knapsack. More data points of large array sizes are needed to 
+    determine if the shape of the curve indeed looks like the expected O(n log n).
+    The surprise result lies with the dynamic programming method as applied to the 
+    fractional knapsack, as it did indeed display as exponential, but far less 
+    than the expected O(2<sup>n</sup>).
+    </dd>
+</dl>
 <hr>
 
 ## Which algorithm performed best for which knapsack?
