@@ -1,7 +1,38 @@
 # Project 2 Final Report: Comparing Knapsacks Experiment
 <hr>
 
-## Authors and Contributions
+# Table of Contents
+1. [How to run this application](#how-to-run-this-application-a-namehowa)
+2. [Authors and contributions](#authors-and-contributions-a-nameauthorsa)
+3. [Project description](#project-description-a-namedescriptiona)
+    1. [UML diagram](#uml-diagram) 
+4. [Plot charts](#plot-charts)
+5. [Performance analysis](#performance-analysis)
+6. [Results: theoretical vs. empirical](#theoretical-results-vs-empirical-results)
+7. [Best performance](#which-algorithm-performed-best-for-which-knapsack)
+8. [Algorithm development](#algorithm-development)
+9. [Other algorithms for the knapsack problem](#were-there-any-other-algorithms-that-could-have-solved-these-problems-such-as-divide-and-conquer)
+<hr>
+
+## How to run this application <a name="how"></a>
+This application uses external libraries that must be added to the project's
+dependency list.
+
+#### Add jar files:
+<ul>
+    <li>Download the JFreeChart library
+<a href = "https://www.javatpoint.com/jfreechart-installation">here</a></li>
+    <li>Download the
+guava-31.0.1-jre.jar file <a href = "https://repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/">here</a></li>
+    <li>Add all of the jar files to the project structure</li>
+</ul>
+
+#### Run both driver classes:
+There are two knapsack packages, one for knapsack 0-1; one for fractional knapsack.
+Each has its own Main.java class. Run both to see their respective console output.
+<hr>
+
+## Authors and Contributions <a name="authors"></a>
 <dl>
 <dt>Angela Fujihara, Project Manager</dt>
 <dd>Contributions:
@@ -51,7 +82,7 @@
 
 <hr>
 
-## Project Description
+## Project Description <a name="description"></a>
 <cite>Author: Ashtin Rivada</cite>
 
 For the structure we chose to use the template you provided for us in the project
@@ -74,7 +105,7 @@ profit onto the console while it is running. Then we have our class PlotGenerato
 that will display the runtimes as a graph, to do this we used a Java library called
 JFreeChart.
 
-#### UML Diagram
+### UML Diagram
 
 <img src = "images/KnapsackExperimentUML.jpeg">
 
@@ -88,102 +119,132 @@ JFreeChart.
 <img src = "images/fracK_dp.jpg" width="600">
 <img src = "images/k01_bruteForce.jpg" width="600">
 <img src = "images/k01_greedy.jpg" width="600">
-<img src = "images/k01_dp.jpg" width="600">
 <hr>
 
 ## Performance Analysis
 
 <dl>
-    <dt>Fractional Dynamic VS 01 Dynamic, <cite>Author: Mycole Brown</cite></dt>
+    <dt>Fractional Dynamic VS 01 Dynamic</dt>
+    <dd><cite>Author: Mycole Brown</cite><br><br>
+    K01 Dynamic Programming method is inconclusive.
+    </dd>
 </dl>
 <hr>
 <dl>
-    <dt>Fractional Dynamic VS Fractional Greedy, <cite>Author: Mycole Brown</cite></dt>
+    <dt>Fractional Dynamic VS Fractional Greedy</dt>
+    <dd><cite>Author: Mycole Brown</cite><br><br>
+    The graph for the Fractional Greedy algorithm shows a runtime that starts high 
+    and quickly drops, stabilizing at a low level as the input array size increases.
+    <br><br>
+    The Fractional Dynamic algorithm graph also starts high and decreases rapidly, 
+    but appears to stabilize slightly higher than the Greedy algorithm.
+    </dd>
 </dl>
 <hr>
 <dl>
-    <dt>Fractional Dynamic VS 01Greedy, <cite>Author: Mycole Brown</cite></dt>
+    <dt>Fractional Dynamic VS 01Greedy</dt>
+    <dd><cite>Author: Mycole Brown</cite><br><br>
+    The 0/1 Greedy algorithm graph shows a sharp decrease and then stabilizes at 
+    a higher time than the Fractional Dynamic algorithm, suggesting that the Fractional 
+    Dynamic is more efficient for larger input sizes.
+    </dd>
 </dl>
 <hr>
 <dl>
-    <dt>Fractional Dynamic VS Fractional Brute, <cite>Author: Mycole Brown</cite></dt>
+    <dt>Fractional Dynamic VS Fractional Brute</dt>
+    <dd><cite>Author: Mycole Brown</cite><br><br>
+    The Fractional Brute Force graph shows a very steep climb as the input size 
+    increases, indicating a significant increase in runtime, likely exponential.
+    <br><br>
+    In contrast, the Fractional Dynamic algorithm maintains a lower and more stable 
+    runtime, even as the input size grows, marking it as significantly more efficient 
+    than the Brute Force method.
+    <br><br>
+    From these comparisons, we can say that the Fractional Dynamic algorithm is 
+    more efficient than the Fractional Greedy and 0/1 Greedy algorithms for larger 
+    input sizes and much more efficient than the Fractional Brute Force algorithm, 
+    which has a runtime that increases exponentially with the input size. The Greedy 
+    versions of the algorithms are usually faster for smaller input sizes but do not 
+    scale as well as the Dynamic version when the input size gets larger.
+    </dd>
 </dl>
 <hr>
 <dl>
-    <dt>Fractional Dynamic VS 01 Brute, <cite>Author: Angela Fujihara</cite></dt>
+    <dt>Fractional Dynamic VS 01 Brute</dt>
+    <dd><cite>Author: Angela Fujihara</cite></dd>
 
 --------Brute Force 0/1 Knapsack--------
-<dt>How it Works:</dt>
-<dd>This method checks every possible combination of items, making
-it very slow, especially with larger datasets.
-</dd>
-<b>Speed</b>
-<ul>
-<li>csv file with 5 items - Approximate between 60k-70k microseconds</li>
-<li>csv file with 10 items - Approximately between 0-10k microseconds</li>
-<li>csv file with 15 items - Approximately between 20k-30k microseconds</li>
-<li>csv file with 20 items - Approximately between 170k-180k microseconds</li>
-<li>csv file with 25 items is off the chart</li>
-<li>csv file with 30 items is off the chart</li>
-</ul>
-<dt>Time Complexity:</dt>
-<dd>
-The time complexity of Brute Force 0/1 Knapsack is exponential,
-typically represented as O(2<sup>n</sup>), where 'n' is the number of items.
-This means that as 'n' increases, the time taken to find the optimal solution
-grows exponentially.
-</dd>
-<dt>Execution Time:</dt>
-<dd>
-With small sets of items (like 5 or 10), it's relatively fast,
-taking anywhere from no time at all to about 10 milliseconds. But as the number
-of items increases, it can get really slow. For sets of 15 to 20 items, it takes
-between about 20,000 to 180,000 microseconds. And for sets of 25 or 30 items,
-it gets so slow that we can't even measure it accurately.
-</dd>
---------Fractional Dynamic Knapsack:--------
-<dt>How it Works:</dt>
-<dd>
-This method sorts items by value-to-weight ratios before picking them,
-which makes it faster than brute force.
-</dd>
-<b>Speed</b>
-<ul>
-<li>csv file with 5 items - Approximate between 4500-4750k microseconds</li>
-<li>csv file with 10 items - Approximately between 250-500 microseconds</li>
-<li>csv file with 15 items - Approximately between 250-500 microseconds</li>
-<li>csv file with 20 items - Approximately between 500-750 microseconds</li>
-<li>csv file with 25 items - Approximately between 500-750 microseconds</li>
-<li>csv file with 30 items - Approximately between 500-750 microseconds</li>
-</ul>
-<dt>Time Complexity:</dt>
-<dd>
-The time complexity of Fractional Dynamic Knapsack is O(n log n),
-where 'n' is the number of items. This complexity arises from sorting the items
-by their value-to-weight ratios before selecting them, which enhances efficiency
-compared to the brute force approach.
-</dd>
-<dt>Execution Time:</dt>
-<dd>
-Unlike brute force, Fractional Dynamic Knapsack stays consistently
-fast no matter how many items you have. For sets of 5 to 30 items, it takes
-about 250 to 500 microseconds most of the time. This shows that it handles
-larger sets of items without slowing down much.
-</dd>
-<dt>Conclusion:</dt>
-<dd>
-Comparing the two methods using the provided data and considering their time
-complexities, Fractional Dynamic Knapsack remains the preferred choice. While
-Brute Force 0/1 Knapsack struggles with larger datasets due to its exponential
-time complexity, Fractional Dynamic Knapsack maintains a more consistent and
-efficient performance, demonstrating its superiority in handling larger sets
-of items.
-</dd>
+    <dt>How it Works:</dt>
+    <dd>This method checks every possible combination of items, making
+    it very slow, especially with larger datasets.
+    </dd>
+    <b>Speed</b>
+    <ul>
+        <li>csv file with 5 items - Approximate between 60k-70k microseconds</li>
+        <li>csv file with 10 items - Approximately between 0-10k microseconds</li>
+        <li>csv file with 15 items - Approximately between 20k-30k microseconds</li>
+        <li>csv file with 20 items - Approximately between 170k-180k microseconds</li>
+        <li>csv file with 25 items is off the chart</li>
+        <li>csv file with 30 items is off the chart</li>
+    </ul>
+    <dt>Time Complexity:</dt>
+    <dd>
+    The time complexity of Brute Force 0/1 Knapsack is exponential,
+    typically represented as O(2<sup>n</sup>), where 'n' is the number of items.
+    This means that as 'n' increases, the time taken to find the optimal solution
+    grows exponentially.
+    </dd>
+    <dt>Execution Time:</dt>
+    <dd>
+    With small sets of items (like 5 or 10), it's relatively fast,
+    taking anywhere from no time at all to about 10 milliseconds. But as the number
+    of items increases, it can get really slow. For sets of 15 to 20 items, it takes
+    between about 20,000 to 180,000 microseconds. And for sets of 25 or 30 items,
+    it gets so slow that we can't even measure it accurately.
+    </dd>
+    --------Fractional Dynamic Knapsack:--------
+    <dt>How it Works:</dt>
+    <dd>
+    This method sorts items by value-to-weight ratios before picking them,
+    which makes it faster than brute force.
+    </dd>
+    <b>Speed</b>
+    <ul>
+        <li>csv file with 5 items - Approximate between 4500-4750k microseconds</li>
+        <li>csv file with 10 items - Approximately between 250-500 microseconds</li>
+        <li>csv file with 15 items - Approximately between 250-500 microseconds</li>
+        <li>csv file with 20 items - Approximately between 500-750 microseconds</li>
+        <li>csv file with 25 items - Approximately between 500-750 microseconds</li>
+        <li>csv file with 30 items - Approximately between 500-750 microseconds</li>
+    </ul>
+    <dt>Time Complexity:</dt>
+    <dd>
+    The time complexity of Fractional Dynamic Knapsack is O(n log n),
+    where 'n' is the number of items. This complexity arises from sorting the items
+    by their value-to-weight ratios before selecting them, which enhances efficiency
+    compared to the brute force approach.
+    </dd>
+    <dt>Execution Time:</dt>
+    <dd>
+    Unlike brute force, Fractional Dynamic Knapsack stays consistently
+    fast no matter how many items you have. For sets of 5 to 30 items, it takes
+    about 250 to 500 microseconds most of the time. This shows that it handles
+    larger sets of items without slowing down much.
+    </dd>
+    <dt>Conclusion:</dt>
+    <dd>
+    Comparing the two methods using the provided data and considering their time
+    complexities, Fractional Dynamic Knapsack remains the preferred choice. While
+    Brute Force 0/1 Knapsack struggles with larger datasets due to its exponential
+    time complexity, Fractional Dynamic Knapsack maintains a more consistent and
+    efficient performance, demonstrating its superiority in handling larger sets
+    of items.
+    </dd>
 </dl>
 <hr>
 <dl>
-    <dt>Fractional Greedy VS Fractional Brute, <cite>Author: Angela Fujihara</cite></dt>
-    <br>
+    <dt>Fractional Greedy VS Fractional Brute</dt>
+    <dd><cite>Author: Angela Fujihara</cite></dd>
     ----------Greedy Fractional Knapsack--------
     <dt>How it Works:</dt>
     <dd>Greedy Fractional Knapsack selects items based on their value-to-weight 
@@ -237,8 +298,8 @@ making it a preferable choice in most cases.
 </dl>
 <hr>
 <dl>
-    <dt>Fractional Greedy VS 01 Brute, <cite>Author: Angela Fujihara</cite></dt>
-
+    <dt>Fractional Greedy VS 01 Brute</dt>
+    <dd><cite>Author: Angela Fujihara</cite></dd>
 ----------Brute Force 0/1 Knapsack--------
 <dt>How it Works:</dt>
 <dd>
@@ -295,8 +356,8 @@ not always give you the absolute best solution.
 </dl>
 <hr>
 <dl>
-    <dt>Fractional Greedy VS 01 Greedy, <cite>Author: Angela Fujihara</cite></dt>
-
+    <dt>Fractional Greedy VS 01 Greedy</dt>
+    <dd><cite>Author: Angela Fujihara</cite></dd>
 ----------Greedy Fractional Knapsack--------
 <dt>How it Works:</dt>
 <dd>
@@ -358,13 +419,13 @@ making it preferable in many cases.
     #6 it is hard to say what the number actually is)
     </dd>
 <hr>
-    <dt>01 dynamic vs 01 greedy, <cite>Author: Ashtin Rivada</cite></dt>
-    <dd>
+    <dt>01 dynamic vs 01 greedy</dt>
+    <dd><cite>Author: Ashtin Rivada</cite><br><br>
     K01 Dynamic Programming method is inconclusive.
     </dd>
 <hr>
-    <dt>Fractional Brute vs 01 Greedy, <cite>Author: Ashtin Rivada</cite></dt>
-    <dd>
+    <dt>Fractional Brute vs 01 Greedy</dt>
+    <dd><cite>Author: Ashtin Rivada</cite>
     <ul>
     ----------01 Greedy Speeds----------
         <li>Knapsack #1: 9,500 Microseconds</li>
@@ -397,8 +458,8 @@ making it preferable in many cases.
 </dl>
 <hr>
 <dl>
-    <dt>Fractional Brute vs 01 Brute, <cite>Author: Ashtin Rivada</cite></dt>
-    <dd><br>
+    <dt>Fractional Brute vs 01 Brute</dt>
+    <dd><cite>Author: Ashtin Rivada</cite><br><br>
     ----------01 Brute Speeds----------
     <ul>
         <li>Knapsack #1:  Less than 2,500,000 Microseconds</li>
@@ -436,37 +497,36 @@ making it preferable in many cases.
 </dl>
 <hr>
 <dl>
-    <dt>Fractional Brute vs 01 Dynamic, <cite>Author: Ashtin Rivada</cite></dt>
-    <dd>
+    <dt>Fractional Brute vs 01 Dynamic</dt>
+    <dd><cite>Author: Ashtin Rivada</cite><br><br>
     K01 Dynamic Programming method is inconclusive.
     </dd>
 </dl>
 <hr>
 <dl>
-    <dt>01 Dynamic VS Fractional Greedy, <cite>Author: Cheryl Moser</cite></dt>
-    <dd>
+    <dt>01 Dynamic VS Fractional Greedy</dt>
+    <dd><cite>Author: Cheryl Moser</cite><br><br>
     K01 Dynamic Programming method is inconclusive.
     </dd>
 </dl>
 <hr>
 <dl>
-    <dt>01 Dynamic VS 01 Brute, <cite>Author: Cheryl Moser</cite></dt>
-    <dd>
+    <dt>01 Dynamic VS 01 Brute</dt>
+    <dd><cite>Author: Cheryl Moser</cite><br><br>
     K01 Dynamic Programming method is inconclusive.
     </dd>
 </dl>
 <hr>
 <dl>
-<dt>01 Greedy VS 01 Brute, <cite>Author: Cheryl Moser</cite></dt>
-    <br>
-    <dd>
+<dt>01 Greedy VS 01 Brute</dt>
+    <dd><cite>Author: Cheryl Moser</cite><br><br>
     It seems that several algorithm plots begin with an outlier point. I suspect 
     this is due to a slowdown caused by the initialization that happens as the code 
     enters a new algorithm class. I confirmed that the array size of 5 is not the issue 
     by placing the array of size 30 into the first plot point generation, and the array 
     of size 5 into the last. The graph still showed that first outlier point. I
     conducted this test for the K01 Greedy algorithm only.
-    <br>
+    <br><br>
     Discarding the first plot point, greedy performed better across the board in this 
     comparison, holding steady around 300ms for all array sizes except size = 25. 
     This point spiked slightly to just above 500ms in the test iteration that I analyzed. 
@@ -553,33 +613,28 @@ making it preferable in many cases.
 
 ## Algorithm development
 
-### Brute force method for the fractional knapsack problem
-<cite>Author: Angela Fujihara</cite>
 <dl>
-    <dd>The methodology involves iterating through all possible combinations of items 
+    <dt>Brute force method for the fractional knapsack problem</dt>
+    <dd><cite>Author: Angela Fujihara</cite><br><br>
+    The methodology involves iterating through all possible combinations of items 
     and calculating the total value and weight for each combination. It ensures accuracy 
     by considering every possible combination but may be inefficient for large datasets 
     due to its exponential time complexity.
     </dd>
 
-### Greedy method for the fractional knapsack problem
-<cite>Author: Angela Fujihara</cite>
-<dt></dt>
-    <dd>
+<dt>Greedy method for the fractional knapsack problem</dt>
+    <dd><cite>Author: Angela Fujihara</cite><br><br>
     The methodology involves sorting the items based on their value-to-weight ratio 
     and iteratively selecting the items with the highest ratio until the knapsack's 
     capacity is reached. It prioritizes items with the highest immediate benefit, 
     aiming to maximize the total value of items in the knapsack. However, it may 
     not always yield the optimal solution.
     </dd>
-</dl>
 
-### Greedy method for the knapsack 0-1 problem
-<cite>Author: Cheryl Moser</cite>
-<dl>
-<dt>Description</dt>
+<dt>Greedy method for the knapsack 0-1 problem</dt>
+<dd><cite>Author: Cheryl Moser</cite>
     <dd>
-    This method is a modified version of the greedy method for the fractional knapsack. 
+    <strong>Description</strong>: This method is a modified version of the greedy method for the fractional knapsack. 
     It is not guaranteed to return optimal results, especially with larger input arrays. 
     The Junit tests associated with this method confirm that with an input array of size 30, 
     it does not report the optimal solution; however, with an array of size 5, it did. 
@@ -588,32 +643,22 @@ making it preferable in many cases.
     greedy method for this problem is not optimal because it does not consider 
     combinations of items; instead, it puts items into the knapsack sequentially by 
     highest value until the weight limit is met.
-    </dd>
-
-<dt>Methods</dt>
-    <dd>
-    A priority queue was used in combination with a custom comparator for holding 
+    <br><br>
+    <strong>Methods</strong>: A priority queue was used in combination with a custom comparator for holding 
     value-weight pairs in decreasing order by value. A hash set was used to store 
     the items that were added to the knapsack. The method iterates through the priority 
     queue, removing the highest value entry first and adding it to the knapsack until 
     the queue is empty, or until the weight limit is met.
-    </dd>
-
-<dt>Analysis</dt>
-<dd>
-    The time complexity of this method is O(n log n). This is due to the dequeue 
+    <br><br>
+    <strong>Analysis</strong>: The time complexity of this method is O(n log n). This is due to the dequeue 
     operation nested within the priority queue iterator operation. The iterator operation 
     depends on the length of the priority queue, or the weight limit, either of which 
     can be of any size; the dequeue operation involves a re-ordering of the queue, 
     which is O(log n) due to the halving operations done on the binary heap.
 </dd>
-</dl>
 
-### 01 Brute Force
-<cite>Author: Ashtin Rivada</cite>
-<dl>
-<dt></dt>
-<dd>
+<dt>01 Brute Force</dt>
+    <dd><cite>Author: Ashtin Rivada</cite><br><br>
     My process for developing my algorithm came after a bunch of research. My first 
     approach was using recursion to get all possibilities of combinations but this 
     seemed to have optimized my method, as I ran it and it solved all the tests 
@@ -634,31 +679,101 @@ making it preferable in many cases.
     choice and I was able to use that to print my answers into the console.
 </dd>
 </dl>
-
-### [algorithm 1 title]
-<cite>Author: Mycole Brown</cite>
-<dl>
-<dt></dt>
-<dd></dd>
-
-
-### [algorithm 2 title]
-<cite>Author: Mycole Brown</cite>
-<dt></dt>
-<dd></dd>
-</dl>
 <hr>
 
 ## Were there any other algorithms that could have solved these problems? Such as divide-and-conquer?
+<dl>
 <cite>Author: Mycole Brown</cite>
-<hr>
 
-## How to run this application
-This application uses external libraries that must be added to the project's
-dependency list. Download the JFreeChart library
-<a href = "https://www.jfree.org/jfreechart/download/">here</a>, and download the
-guava-31.0.1-jre.jar file <a href = "https://repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/">here</a>.
-Add the jar files to the project structure.
+### Some different methodologies for solving the knapsack problem:
+<dt>Greedy Methodology (0/1 and Fractional)</dt>
+    <dd>
+    The greedy approach to the knapsack problem involves making the locally optimal 
+    choice at each step with the hope of finding the global optimum. For the 0/1 
+    knapsack, this might involve choosing items based on value-to-weight ratio 
+    without splitting items. For the fractional knapsack, it allows splitting items 
+    to maximize the total value within the weight constraint.
+    </dd>
+    <dt>Dynamic Programming (Fractional Dynamic)</dt>
+    <dd>
+    Dynamic programming solves problems by breaking them down into simpler subproblems. 
+    It is used to solve the knapsack problem by considering the solution for smaller 
+    capacities and smaller sets of items, then building up to the solution for the 
+    original problem. It typically involves using a table to store the results of 
+    subproblems to avoid redundant calculations.
+    </dd>
+    <dt>Brute Force Methodology (Fractional Brute Force)</dt>
+    <dd>
+    A brute force approach checks all possible combinations of items to find the 
+    one that offers the most value without exceeding the weight limit. This method 
+    is exhaustive and often impractical for large datasets due to its exponential 
+    time complexity.
+    </dd>
 
-There are two knapsack packages, each with its own Main.java file. Run both of
-those to see their respective console output.
+### Other algorithms that could have been used to solve these problems
+
+<dt>Divide and Conquer</dt>
+    <dd>
+    This approach involves dividing the problem into smaller subproblems, solving 
+    the subproblems recursively, and then combining their solutions to solve the 
+    original problem. While divide-and-conquer is a powerful strategy for many problems, 
+    it is not typically used for the knapsack problem because the knapsack problem 
+    does not naturally break down into independent subproblems that can be solved 
+    recursively without overlapping subproblems, which is where dynamic programming 
+    is more efficient.
+    </dd>
+    <dt>Genetic Algorithms</dt>
+    <dd>
+    These are adaptive heuristic search algorithms that are based on the evolutionary 
+    ideas of natural selection and genetics. What does heuristic mean? Imagine you're 
+    in a maze. Instead of wasting time trying every possible path from start to finish, 
+    you follow a simple rule like 'always turn right' to find the exit. It's not 
+    foolproof, but it gets you out quickly. That’s what a heuristic does in problem-solving: 
+    it's a shortcut that’s usually good enough. They are particularly useful for 
+    solving optimization and search problems where the solution space is large and complex.
+    </dd>
+    <dt>Simulated Annealing</dt>
+    <dd>
+    This is a probabilistic technique and it’s used for estimating the global optimum 
+    of a given function.What is a probabilistic technique? A probabilistic technique 
+    in the context of algorithm design is a method that makes use of randomness 
+    as part of its logic or process. It doesn't guarantee a perfect answer every 
+    time but is designed to find a good answer most of the time. Probabilistic 
+    algorithms often perform well for complex problems where deterministic solutions 
+    (those that are always expected to produce the same result) might be too slow 
+    or difficult to implement. What is a global optimum? You're playing hide and 
+    seek, and you want to find the absolute best hiding spot in the entire area. 
+    The global optimum is that unbeatable spot. Finding it means you've won the 
+    game of hide and seek in the most spectacular way possible. Out of all of the 
+    places it’s the most optimum (assuming that's correct English). It is a metaheuristic 
+    to approximate global optimization in a large search space and can be applied 
+    to the knapsack problem. What is a metaheuristic? This is like having a bunch 
+    of different 'always turn right' rules and picking the one that seems to work 
+    best for the particular maze you're in. It's a strategy to choose between different 
+    shortcuts. Also a search space needs some defining. A search space is all the 
+    spots you could possibly hide in during the game of hide and seek. Some spots 
+    are pretty good, some are okay, and one is the ultimate best. That's your search space.
+    <br>
+    The name “simulated annealing” comes from how blacksmiths make swords. They 
+    heat metal to make it malleable, hammer it into shape, and then cool it down 
+    to lock in the form. Simulated annealing does something similar with solutions 
+    – it shakes things up with heat (randomness) to escape ruts and then cools down 
+    to settle into a great solution.
+    </dd>
+    <dt>Backtracking</dt>
+    <dd>
+    This is an algorithmic technique for solving problems recursively by trying 
+    to build a solution, one piece at a time, removing those solutions that fail 
+    to satisfy the constraints of the problem at any point in time.
+    </dd>
+    <dt>Branch and Bound</dt>
+    <dd>
+    This is another algorithm design paradigm used for solving combinatorial 
+    optimization problems like the knapsack problem. Combinatorial optimization 
+    problems are puzzles where you have to consider a bunch of different elements 
+    and figure out the best combination. Like choosing your team in a pick-up 
+    basketball game from everyone who showed up at the court. It involves dividing 
+    the problem into several branches, computing bounds for each branch, and then 
+    pruning branches that cannot yield better solutions than the best one found so far.
+    </dd>
+</dl>
