@@ -119,6 +119,7 @@ JFreeChart.
 <img src = "images/fracK_dp.jpg" width="600">
 <img src = "images/k01_bruteForce.jpg" width="600">
 <img src = "images/k01_greedy.jpg" width="600">
+<img src = "images/k01_dp.jpg" width="600">
 <hr>
 
 ## Performance Analysis
