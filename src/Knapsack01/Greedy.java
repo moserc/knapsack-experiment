@@ -14,17 +14,12 @@ public class Greedy {
     /**
      * The greedy method for solving the Knapsack 0-1 problem. This method is
      * not guaranteed to return optimal results, especially with larger input
-     * arrays. The associated JUnit tests confirm that with an input array of
-     * size 30, it does not report the optimal solution; however, with an array
-     * of size 5, it does. I used an <a href="https://augustineaykara.github.io/Knapsack-Calculator/">
-     * online K01 calculator</a> to retrieve the optimal solution to the input
-     * array proposed in testGreedyLarge. The reason for this is because the
-     * greedy method does not consider combinations of items; instead, it puts
-     * items into the knapsack sequentially by highest value until the weight
-     * limit is met.
+     * arrays. The reason for this is because the greedy method does not consider
+     * all combinations of items; instead, it puts items into the knapsack
+     * sequentially by highest value-to-weight ratio until the weight limit is met.
      *
-     * @param object The knapsack object.
-     * @return The knapsack object.
+     * @param object The knapsack object
+     * @return runtime
      * @author Cheryl Moser
      */
     public static double greedy(Knapsack object) {
@@ -37,24 +32,33 @@ public class Greedy {
         int limit = object.getMaxWeight();
 
         //output
-        System.out.println("-------Greedy 01Knapsack-------");
+        System.out.println("--------------Greedy 01Knapsack--------------\n");
         System.out.println("Knapsack number: " + object.getKnapsackNumber() +
                 "\nNumber of item options: " + object.getTotalItems() +
                 "\nWeight Capacity: " + object.getMaxWeight());
 
-        //create a priority queue to hold items, sort in decreasing order by
-        //item benefit (key): O(1)
+        //create a priority queue to hold items, sort in non-increasing order by
+        //item benefit (value/weight): O(1)
         PriorityQueue<Map.Entry<Integer,Integer>> items = new PriorityQueue<>(
-                //custom comparator via lambda expression
-                (a,b) -> b.getKey() - a.getKey()
+                //custom comparator via lambda expression ordering by
+                //item benefit (value per unit of weight)
+                (a,b) -> {
+                    double benefitA = (double) a.getKey() / a.getValue();
+                    double benefitB = (double) b.getKey() / b.getValue();
+                    //workaround to return an integer representation of the
+                    //difference between a & b; otherwise the division returns
+                    //a double much to small to cast to int
+                    return (int) ((benefitB - benefitA) * 1000);
+                }
         );
 
         //add values and weights as key:value pair to priority queue.
         //worst case O(n): depends on the length of the weights list
-        System.out.println("Item options (value,weight):");
+        System.out.println("Item options (value, weight, value per unit of weight):");
         for (int i = 0; i < weights.length; i++){
             items.offer(Map.entry(values[i], weights[i]));
-            System.out.println("("+values[i] + ", " + weights[i] + ")");
+            double benefit = (double) values[i] / weights[i];
+            System.out.println(i+1 + ". ("+values[i] + ", " + weights[i] + ", " + String.format("%.3f", benefit) + ")");
         }
 
         //initialize the total weight and value counts
@@ -91,6 +95,7 @@ public class Greedy {
         Iterator<Map.Entry<Integer, Integer>> iterator = knapsackContents.iterator();
         StringBuilder valueOutput = new StringBuilder();
         StringBuilder weightOutput = new StringBuilder();
+        StringBuilder benefitOutput = new StringBuilder();
 
         //iterate through the optimized knapsack and attach item elements to
         //their associated strings
@@ -98,17 +103,20 @@ public class Greedy {
             Map.Entry<Integer,Integer> entry = iterator.next();
             valueOutput.append(entry.getKey());
             weightOutput.append(entry.getValue());
+            benefitOutput.append(String.format("%.3f", (double) entry.getKey()/entry.getValue()));
             if (iterator.hasNext()){
                 valueOutput.append(", ");
                 weightOutput.append(", ");
+                benefitOutput.append(", ");
             }
         }
 
-        //output
+        //printed output
         System.out.println("Knapsack Best Value: " + totValue +
                 "\nKnapsack Best Weight: " + totWeight +
-                "\nKnapsack contains items with values of " + valueOutput +
-                "\n    and weights of " + weightOutput);
+                "\nKnapsack contains items with values of (" + valueOutput +
+                ")\nweights of (" + weightOutput +
+                ")\nand benefit ratios of (" + benefitOutput + ")");
 
         //capture end time
         long t1 = System.nanoTime();

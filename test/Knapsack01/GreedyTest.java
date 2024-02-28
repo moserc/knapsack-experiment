@@ -2,11 +2,12 @@ package Knapsack01;
 
 import ProjectTools.Knapsack;
 import org.junit.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+
 import static Knapsack01.Greedy.greedy;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Unit tests for the K01 greedy method.
@@ -18,7 +19,7 @@ public class GreedyTest {
 
     /**
      * Tests the K01 greedy method with a small input array.
-     * Asserts a reasonable runtime value, and asserts correct optimal
+     * Asserts a runtime value greater than 0, and asserts correct optimal
      * weight and value results of the knapsack (values captured from the print
      * stream of System.out).
      * @author Cheryl Moser
@@ -60,9 +61,9 @@ public class GreedyTest {
 
     /**
      * Tests the K01 greedy method with a large input array.
-     * Asserts a reasonable runtime value, and asserts that the
+     * Asserts a runtime value greater than 0, and asserts that the
      * weight and value results of the knapsack (values captured from the print
-     * stream of System.out) will not be the optimal solution.
+     * stream of System.out) will be the optimal solution.
      * @author Cheryl Moser
      */
     @Test
@@ -96,8 +97,8 @@ public class GreedyTest {
 
         //assertions
         assertTrue(runtime > 0);
-        assertFalse(printedOutput.contains("Knapsack Best Value: 692")); //expected optimal--> 692
-        assertFalse(printedOutput.contains("Knapsack Best Weight: 198")); //expected optimal--> 198
+        assertTrue(printedOutput.contains("Knapsack Best Value: 692")); //expected optimal--> 692
+        assertTrue(printedOutput.contains("Knapsack Best Weight: 198")); //expected optimal--> 198
         //optimal values calculated using an online calculator. See source in the
         //class javadoc above
 

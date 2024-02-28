@@ -119,6 +119,7 @@ JFreeChart.
 <img src = "images/fracK_dp.jpg" width="600">
 <img src = "images/k01_bruteForce.jpg" width="600">
 <img src = "images/k01_greedy.jpg" width="600">
+<img src = "images/k01_dp.jpg" width="600">
 <hr>
 
 ## Performance Analysis
@@ -506,14 +507,20 @@ making it preferable in many cases.
 <dl>
     <dt>01 Dynamic VS Fractional Greedy</dt>
     <dd><cite>Author: Cheryl Moser</cite><br><br>
-    K01 Dynamic Programming method is inconclusive.
-    </dd>
+    K01 Dynamic Programming method is inconclusive, though it currently shows
+    as being one of the best performers of the bunch with even the largest input size
+    keeping a runtime of under 24 microseconds. FracK Greedy seems to be the clear
+    winner here, with very low runtimes that hold steady across all input sizes.
+</dd>
 </dl>
 <hr>
 <dl>
     <dt>01 Dynamic VS 01 Brute</dt>
     <dd><cite>Author: Cheryl Moser</cite><br><br>
-    K01 Dynamic Programming method is inconclusive.
+    K01 Dynamic Programming method is inconclusive, though it currently shows
+    as being one of the best performers of the bunch with even the largest input size
+    keeping a runtime of under 24 microseconds. 01 Brute shows a steep exponential
+    curve, as expected.
     </dd>
 </dl>
 <hr>
@@ -528,8 +535,7 @@ making it preferable in many cases.
     conducted this test for the K01 Greedy algorithm only.
     <br><br>
     Discarding the first plot point, greedy performed better across the board in this 
-    comparison, holding steady around 300ms for all array sizes except size = 25. 
-    This point spiked slightly to just above 500ms in the test iteration that I analyzed. 
+    comparison, holding steady between 800 - 2100 ms for all array sizes.
     The greedy plot appears to be a curve resembling an O(n log n) curve, though that is
     somewhat inconclusive without more data points to the right; the brute force 
     plot shows an exponential curve.
@@ -545,7 +551,7 @@ making it preferable in many cases.
     <ul>
         <li>Brute Force --> Expectation: O(2<sup>n</sup>) for both K01 & FracK</li>
         <li>Greedy --> O(n log n) for both K01 & FracK; however, we know that 
-        it will produce suboptimal results when applied to K01</li>
+        it may produce suboptimal results when applied to K01</li>
         <li>Dynamic Programming --> 01 O(nW), where W = the weight limit of the knapsack
             | FracK exponential similar to O(2<sup>n</sup>)</li>
     </ul></dd>
@@ -635,20 +641,17 @@ making it preferable in many cases.
 <dd><cite>Author: Cheryl Moser</cite>
     <dd>
     <strong>Description</strong>: This method is a modified version of the greedy method for the fractional knapsack. 
-    It is not guaranteed to return optimal results, especially with larger input arrays. 
-    The Junit tests associated with this method confirm that with an input array of size 30, 
-    it does not report the optimal solution; however, with an array of size 5, it did. 
-    In designing the tests, an online calculator (https://augustineaykara.github.io/Knapsack-Calculator/) 
-    was used to find the actual optimized profit and weight for the test input. The 
-    greedy method for this problem is not optimal because it does not consider 
+    It is not guaranteed to return optimal results, especially with larger input arrays.
+    The greedy method for this problem is not optimal because it does not consider all
     combinations of items; instead, it puts items into the knapsack sequentially by 
-    highest value until the weight limit is met.
+    highest value-to-weight ratio until the weight limit is met.
     <br><br>
     <strong>Methods</strong>: A priority queue was used in combination with a custom comparator for holding 
-    value-weight pairs in decreasing order by value. A hash set was used to store 
+    value-weight pairs in non-increasing order by the value/weight ratio. A hash set was used to store 
     the items that were added to the knapsack. The method iterates through the priority 
-    queue, removing the highest value entry first and adding it to the knapsack until 
-    the queue is empty, or until the weight limit is met.
+    queue, removing the highest value-to-weight entry first and adding it to the knapsack until 
+    the queue is empty, or until the weight limit is met. If the addition of an item 
+    exceeds the weight limit, it is discarded and the next item is considered.
     <br><br>
     <strong>Analysis</strong>: The time complexity of this method is O(n log n). This is due to the dequeue 
     operation nested within the priority queue iterator operation. The iterator operation 
