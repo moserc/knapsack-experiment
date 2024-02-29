@@ -10,20 +10,20 @@ public class Dynamic {
      * @param wt  Array containing the weights of the items.
      * @param val Array containing the values of the items.
      * @param n   The number of items.
+     * @param knapsackNumber The number identifier for the knapsack.
      * @return The maximum value that can be achieved within the given weight limit.
-     * @author Mycole Brown
      */
-    public static double knapSack(int W, int wt[], int val[], int n, int knapsackNumber) {
-        System.out.println("------------Brute Force 01Knapsack for " + wt.length + " items------------");
+    public static double knapSack(int W, int[] wt, int[] val, int n, int knapsackNumber) {
+        System.out.println("------------Dynamic 01Knapsack for " + wt.length + " items------------");
         System.out.println("Knapsack Number: " + knapsackNumber);
         System.out.println("Values in this knapsack are: " + Arrays.toString(val));
         System.out.println("Weights for this knapsack are: " + Arrays.toString(wt));
 
+        // Start time for performance measurement
         double startTime = System.nanoTime();
 
         // Table to store the maximum value that can be achieved using the first i items and weight j
-        int dp[][] = new int[n + 1][W + 1];
-
+        int[][] dp = new int[n + 1][W + 1];
 
         // Build the table dp[][] in bottom up manner
         for (int i = 0; i <= n; i++) {
@@ -41,13 +41,10 @@ public class Dynamic {
         // The last cell of the table contains the answer
         int answer = dp[n][W];
 
+        // End time for performance measurement
         double endTime = System.nanoTime();
-        double timeTaken = (endTime - startTime) / 1000;
+        double timeTaken = (endTime - startTime) / 1_000_000; // Convert to milliseconds
 
-        return timeTaken;
+        return timeTaken; // Return the time taken for the computation
     }
-
-
-    }
-
-
+}
